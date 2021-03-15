@@ -1,0 +1,151 @@
+body{
+    -webkit-font-smoothing: antialiased;
+}
+
+#navbarDropdownMenuLink{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+}
+
+
+#notification-badge {
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+#profile-img{
+    margin-right: .5rem;
+}
+
+#menu-link1{
+    font-family: 'DM Sans', 'sans-serif';
+    font-size: 1rem;
+    transition: all .25s ease-out;
+}
+
+#menu-link2{
+    font-family: 'DM Sans', 'sans-serif';
+    font-size: 1rem;
+    transition: all .25s ease-out;
+}
+
+#menu-link2:hover{
+    background-color: rgb(255, 30, 30);
+    color: white;
+}
+
+/* #nav-logo{
+    margin-left: 5rem;
+} */
+
+/* #avatar-menu{
+    margin-right: 8rem;
+} */
+
+.dropdown-menu{
+    box-shadow: 5px 5px solid rgb(0, 0, 0);
+}
+
+#banner-btn{
+    transition: all .25s ease-in-out;
+}
+
+.text-white{
+    font-family: "DM Sans", sans-serif;
+    transition: all .25s ease-in-out;
+}
+
+.text-white:hover{
+    text-decoration: underline;
+}
+
+hr{
+    background-color: rgb(255, 255, 255);
+}
+
+i{
+    font-size: 1.3em;
+}
+
+h2 {
+    color: black;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+h5{
+    font-family: "DM Sans", sans-serif;
+}
+
+/* #jumbotron {
+    border-radius: 1.25rem;
+} */
+
+header {
+    margin-bottom: 6rem;
+}
+
+#restaurant-name{
+    color:#fede75;
+    font-weight: bolder;
+}
+
+#menu-divider {
+    background-color: black;
+}
+
+p{
+    font-family: 'DM Sans', sans-serif;
+}
+
+#banner-image-heading {
+    font-family: 'DM Sans',sans-serif;
+    font-weight: bolder;
+    letter-spacing: -.1rem;
+}
+
+.card-text {
+    color: #4d4d4d;
+}
+
+.login-form-link{
+    text-transform: none;
+}
+
+.btn-white.active{
+    background-color: #000000;
+    border-radius: 1rem;
+    box-shadow: none;
+    color: white!important;
+}
+
+.btn-white.active:focus{
+    box-shadow: none!important;
+}
+
+
+.btn-white{
+    border-radius: 1rem;
+    box-shadow: none;
+}
+
+.btn-black{
+    border-radius: 1rem;
+}
+
+#login-google{
+    text-decoration: none;
+}
+
+.form-select {
+    display: inline-block;
+    border: 0;
+    transition: all .25s ease-in-out;
+    
+}
+
+
+
+
+
