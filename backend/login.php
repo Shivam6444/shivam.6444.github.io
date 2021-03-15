@@ -4,7 +4,6 @@
     session_start();
     require_once "./functions/functions.php";
 
-  
     if(isset($_SESSION['secret_token']) && isset($_POST['loginToken']) ){
         
         $username = $_POST['username'];
