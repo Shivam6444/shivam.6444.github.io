@@ -22,7 +22,7 @@
           <div class="container">
             <a class="navbar-brand" href="#" id="nav-logo">
               <img
-                src="img/MEALFUL.svg"
+                src="img/mealful (1).svg"
                 height="50"
                 alt="" 
               />
@@ -78,7 +78,7 @@
                 >Valid only for new users.
                 </p>
 
-                <a class="btn btn-lg text-black" href="#!" role="button" style="margin-left: 3rem;text-transform: initial;font-size:1.25rem;border-radius:.5rem; background-color: #ffd663;font-weight: bold;" id="banner-btn">Sign up to start ordering</a
+                <a class="btn btn-lg text-black" id="single-meal-button" href="#!" role="button" style="margin-left: 3rem;text-transform: initial;font-size:1.25rem;border-radius:.5rem; background-color: #ffd663;font-weight: bold;" id="banner-btn">Sign up to start ordering</a
                 >
               </div>
           </div>
@@ -337,5 +337,6 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
   </body>
 </html>

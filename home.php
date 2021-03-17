@@ -48,23 +48,23 @@
 
 
 <div class="container text-center">
-  <div class="btn-toolbar mb-2" role="toolbar" aria-label="Toolbar with button groups" style="font-family:'DM Sans',sans-serif;">
+  <div class="btn-toolbar mb-2" role="toolbar" aria-label="Toolbar with button groups" style="font-family:'Eina Regular',sans-serif;">
 <?php 
   foreach($calendar_data as $day => $date_num){
     //--- Modify styles here for active and normal anchors ---//
     if($day == $active_day){
-      $styles= "font-size:1rem;text-transform:initial;font-weight:bold;";
+      $styles= "font-size:1.1rem;text-transform:initial;font-weight:bold;";
       $classes= "btn btn-white text-black active";
     }
     else{
-      $styles="font-size:1rem;text-transform:initial;font-weight:bold;";
+      $styles="font-size:1.1rem;text-transform:initial;";
       $classes="btn btn-white text-black";
     }
 ?>
   <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
     <a href="<?php echo './home.php?day='.$day.'&slot='.$active_slot; ?>" type="button" id="calendar-btn" class="<?php echo $classes; ?>" style="<?php echo $styles; ?>">
       <?php echo $day; ?>
-      <br><strong><h4 style="margin-top:.5rem;"><?php echo $date_num; ?></h4></strong>
+      <br><strong><h4 style="margin-top:.5rem;font-weight:bold;"><?php echo $date_num; ?></h4></strong>
     </a>
   </div>
 <?php
@@ -115,19 +115,19 @@
 
 <div class="container">
 
-<div class="btn-toolbar mb-2 float-end" role="group" aria-label="Basic radio toggle button group" style="font-family:'DM Sans',sans-serif;border-radius:.5rem;">
+<div class="btn-toolbar mb-2 float-end" role="group" aria-label="Basic radio toggle button group" style="font-family:'Eina Regular',sans-serif;border-radius:.5rem;">
 
 <div class="btn-groupshadow-0 text-center" role="group" aria-label="First group" style="width:auto;">
-    <a href="<?php echo './home.php?day='.$active_day.'&slot=lunch'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'lunch'){ echo 'active'; }?>"  style="font-size:1rem;text-transform:initial;">Lunch</a>
+    <a href="<?php echo './home.php?day='.$active_day.'&slot=lunch'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'lunch'){ echo 'active'; }?>"  style="font-size:1rem;text-transform:initial;font-weight:bold;">Lunch</a>
   </div>
   <div class="btn-group shadow-0 text-center" role="group" aria-label="First group" style="width:auto;">
-    <a href="<?php echo './home.php?day='.$active_day.'&slot=dinner'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'dinner'){ echo 'active'; }?>" style="font-size:1rem;text-transform:initial;">Dinner</a>
+    <a href="<?php echo './home.php?day='.$active_day.'&slot=dinner'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'dinner'){ echo 'active'; }?>" style="font-size:1rem;text-transform:initial;font-weight:bold;">Dinner</a>
   </div>
   </div>
 
 
 
-  <h5 class = "text-left text-black mb-3" style="font-family:'DM Sans',sans-serif; font-size: 2.5rem; letter-spacing: -.05rem; font-weight: 500;">Lunch menu</h5>
+  <h5 class = "text-left text-black mb-3" style="font-family:'Montserrat',sans-serif; font-size: 2.5rem; letter-spacing: -.1rem; font-weight: bold;">Lunch menu</h5>
   <div class="alert dialog alert-warning" role="alert" style="border-radius: 1.8rem;margin-bottom:2rem;">
   <p class="card-text text-black">
     <span><?xml version="1.0" encoding="iso-8859-1"?>

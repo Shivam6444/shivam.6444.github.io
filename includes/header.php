@@ -20,13 +20,14 @@ require_once "./includes/verification.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Mealful</title>
+    <!-- MDB -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600&display=swap" rel="stylesheet">
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 
     <!-- Classes based on the file -->
     <?php
@@ -36,6 +37,9 @@ require_once "./includes/verification.php";
         }
         else if($current_file_name == 'home.php'){
             echo "<link rel=\"stylesheet\" href=\"css/home.css\" />";
+        }
+        else if($current_file_name == 'plans.php'){
+            echo "<link rel=\"stylesheet\" href=\"css/plans_page.css\" />";
         }
     ?>
 
@@ -57,8 +61,8 @@ require_once "./includes/verification.php";
             <div class="container">
                 <a class="navbar-brand" href="../home.html" id="nav-logo">
                     <img
-                    src="./img/MEALFUL.svg"
-                    height="55"
+                    src="./img/mealful-22.svg"
+                    height="38"
                     alt="" 
                     />
                 </a>
@@ -79,10 +83,10 @@ require_once "./includes/verification.php";
             <!--Navbar and Logo-->
             <nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top shadow-md">
                 <div class="container">
-                <a class="navbar-brand" href="#" id="nav-logo">
+                <a class="navbar-brand" href="#" id="nav-logo-home">
                     <img
-                    src="./img/MEALFUL.svg"
-                    height="55"
+                    src="./img/mealful-22.svg"
+                    height="38"
                     alt="" 
                     />
                 </a>
@@ -102,7 +106,7 @@ require_once "./includes/verification.php";
                 <!--Avatar-->
                     <ul class="navbar-nav d-flex flex-row ms-auto mb-2 mb-lg-0" id="avatar-menu">
                     <li class="nav-item" id="calendar-upcoming">
-                        <a class="nav-link text-black btn-outline-black btn-rounded waves-effect" href="#" id="" style="font-family:'DM Sans', sans-serif;margin-top:.5rem;margin-right:2rem;padding-left:1rem;padding-right:1rem;border-radius:10rem;">Scheduled
+                        <a class="nav-link text-black btn-outline-black btn-rounded waves-effect" href="#" id="" style="font-family:'Eina Regular', sans-serif;margin-top:.5rem;margin-right:2rem;padding-left:1rem;padding-right:1rem;border-radius:10rem;font-weight:bold;">Scheduled
                         </a>
                     </li>
                     <li class="nav-item dropdown">

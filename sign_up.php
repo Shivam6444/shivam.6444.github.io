@@ -80,7 +80,7 @@
           
             <!-- Submit button -->
             <div class="col d-flex mb-2 justify-content-center">
-            <button type="submit" id="login-button" name="registerUser" class="btn btn-primary mx-1">Continue</button>
+            <button type="submit" id="login-button" name="registerUser" class="btn btn-primary mx-1" style="font-weight:bold;letter-spacing:.05rem;">Continue</button>
             </div>
           
             <!-- Register buttons -->
@@ -107,7 +107,7 @@
               </div>
               </div>
 
-              <div class="row mb">
+              <div class="row mb-3">
                 <div class="col d-flex justify-content-center">
                 <a href=<?php echo $login_url; ?> id="login-google" class="btn btn-transparent mx-1 border border-dark" style="text-decoration:none;">
                     <span>

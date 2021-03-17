@@ -1,16 +1,23 @@
+@font-face {
+    font-family: 'Eina Regular';
+    src: url(../fonts/Eina01-Regular.ttf);
+}
+
 body{
     -webkit-font-smoothing: antialiased;
+    
 }
 
 #navbarDropdownMenuLink{
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Eina Regular', sans-serif;
+    font-weight: bold;
     font-size: 1rem;
     color: rgb(0, 0, 0);
 }
 
 
 #notification-badge {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Eina Regular', sans-serif;
 }
 
 
@@ -19,13 +26,13 @@ body{
 }
 
 #menu-link1{
-    font-family: 'DM Sans', 'sans-serif';
+    font-family: 'Eina Regular', 'sans-serif';
     font-size: 1rem;
     transition: all .25s ease-out;
 }
 
 #menu-link2{
-    font-family: 'DM Sans', 'sans-serif';
+    font-family: 'Eina Regular', 'sans-serif';
     font-size: 1rem;
     transition: all .25s ease-out;
 }
@@ -35,7 +42,7 @@ body{
     color: white;
 }
 
-/* #nav-logo{
+/* #nav-logo-home{
     margin-left: 5rem;
 } */
 
@@ -52,7 +59,7 @@ body{
 }
 
 .text-white{
-    font-family: "DM Sans", sans-serif;
+    font-family: 'Eina Regular', sans-serif;
     transition: all .25s ease-in-out;
 }
 
@@ -75,7 +82,7 @@ h2 {
 }
 
 h5{
-    font-family: "DM Sans", sans-serif;
+    font-family: 'Eina Regular', sans-serif;
 }
 
 /* #jumbotron {
@@ -87,7 +94,7 @@ header {
 }
 
 #restaurant-name{
-    color:#fede75;
+    color:#ffd663;
     font-weight: bolder;
 }
 
@@ -96,11 +103,11 @@ header {
 }
 
 p{
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Eina Regular', sans-serif;
 }
 
 #banner-image-heading {
-    font-family: 'DM Sans',sans-serif;
+    font-family: 'Eina Regular',sans-serif;
     font-weight: bolder;
     letter-spacing: -.1rem;
 }
@@ -117,7 +124,7 @@ p{
     background-color: #000000;
     border-radius: 1rem;
     box-shadow: none;
-    color: white!important;
+    color: #ffffff!important;
 }
 
 .btn-white.active:focus{
@@ -133,6 +140,7 @@ p{
 .btn-black{
     border-radius: 1rem;
 }
+
 
 #login-google{
     text-decoration: none;

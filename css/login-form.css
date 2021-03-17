@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Eina Regular';
+    src: url(../fonts/Eina01-Regular.ttf);
+}
+
 body{
     -webkit-font-smoothing: antialiased;
 }
@@ -5,6 +10,7 @@ body{
 .container-fluid{
     background-image: url("../img/foood.png");
     background-size: 100%;
+    height: auto;
     background-repeat: no-repeat;
 }
 
@@ -15,18 +21,18 @@ h2 {
 }
 
 h5{
-    font-family: "DM Sans", sans-serif;
+    font-family: "Eina Regular", sans-serif;
 }
 
 .card {
     margin-top: 3em;
     width: 27.5em;
     border-radius: 1.5em;
-    font-family: "DM Sans", sans-serif;
+    font-family: "Eina Regular", sans-serif;
 }
 
 p {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Eina Regular", sans-serif;
 }
 
 #form-email {
@@ -40,6 +46,11 @@ p {
     background: rgb(0, 0, 0);
     width: 24rem;
     text-transform: initial;
+    transition: all .2s ease-in-out!important;
+}
+
+#login-button:hover {
+    color:#ffd663!important;
 }
 
 .form-label {
@@ -52,6 +63,11 @@ p {
     border-radius: 2em;;
     width: 24rem;
     text-transform: initial;
+    transition: all .2s ease-in-out!important;
+}
+
+#login-facebook:hover {
+    text-decoration: none;
 }
 
 #login-google{
@@ -61,7 +77,15 @@ p {
     text-transform: initial;
     margin-bottom: 2rem;
     color: black;
+    transition: all .2s ease-in-out!important;
 }
+
+#login-google:hover {
+    text-decoration: none;
+}
+
+
+
 
 #remember-me{
     padding-left: 1.5rem;
@@ -76,8 +100,8 @@ p {
 }
 
 a{
-    font-family: "DM Sans", sans-serif;
-    transition: all .5s ease-in-out;
+    font-family: "Eina Regular", sans-serif;
+    transition: all .2s ease-in-out;
 }
 
 a:hover{
@@ -91,4 +115,5 @@ hr{
 i{
     font-size: 1.3em;
 }
+
 

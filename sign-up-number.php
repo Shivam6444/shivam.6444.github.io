@@ -3,7 +3,7 @@
   // session_start();
   include "./includes/header.php";
 
-  print_r($_SESSION);
+  // print_r($_SESSION);
 
 ?>
 
@@ -11,7 +11,7 @@
     <div class="container-fluid">
        
       <div class="row d-flex justify-content-center">
-        <div class="col-md-6 offset-2">   
+
           <div class="card mb-5 shadow-5">
             <div class="card-body">
               <h2 class="card-title text-center mb-3">We're almost there, you're a few steps away from a world of divine meals.</h2>
@@ -108,7 +108,7 @@
                   ?>
 
                 </div>
-                </div>
+            
               </form>
 
               <?php

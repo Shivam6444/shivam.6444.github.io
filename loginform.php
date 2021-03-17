@@ -41,7 +41,7 @@
     
         <div class="card mb-5 shadow-lg">
         <div class="card-body">
-        <h2 class="card-title text-center">Log in</h2>
+        <h2 class="card-title text-center" style="font-weight:bold;">Log in</h2>
         <form method="post" action="backend/login.php">
           
             <!-- Email input -->
@@ -75,13 +75,13 @@
           
               <div class="col d-flex justify-content-center">
                 <!-- Simple link -->
-                <a class ="login-form-link" href="#!" style="text-decoration:none;">Forgot password?</a>
+                <a class ="login-form-link" href="#!" style="text-decoration:none;font-weight:bold;">Forgot password?</a>
               </div>
             </div>
           
             <!-- Submit button -->
             <div class="col d-flex mb-2 justify-content-center">
-            <button type="submit" id="login-button" name="submitLogin" class="btn btn-primary mx-1">Continue</button>
+            <button type="submit" id="login-button" name="submitLogin" class="btn btn-primary mx-1 hover-shadow" style="font-weight:bold;letter-spacing:.05rem;">Continue</button>
             </div>
           
             <!-- Register buttons -->
@@ -92,7 +92,7 @@
 
               <div class="row mb-3">
               <div class="col d-flex justify-content-center">
-              <a href=<?php echo $facebook_login_url; ?> id="login-facebook" class="btn text-white mx-1" style="background-color:#1976D2">
+              <a href=<?php echo $facebook_login_url; ?> id="login-facebook" class="btn text-white mx-1" style="background-color:#1976D2;font-weight:bold;">
                 <span>
                     <?xml version="1.0" encoding="iso-8859-1"?>
                     <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -108,9 +108,9 @@
               </div>
               </div>
 
-              <div class="row mb">
+              <div class="row mb-3">
                 <div class="col d-flex justify-content-center">
-                <a href=<?php echo $login_url; ?> id="login-google" class="btn btn-transparent mx-1 border border-dark" style="text-decoration:none;">
+                <a href=<?php echo $login_url; ?> id="login-google" class="btn btn-transparent mx-1 border border-dark" style="text-decoration:none;font-weight:bold;">
                     <span>
                     <?xml version="1.0" encoding="iso-8859-1"?>
                     <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -134,8 +134,8 @@
                 </div>
                 </div>
 
-              <p class ="text-black" id="register-link">Don't have an account?
-              <a href="sign_up.php" style="text-decoration:none">Sign up</a></p>
+              <p class ="text-dark" id="register-link">Don't have an account?
+              <a href="sign_up.php" style="text-decoration:none;font-weight:bold;">Sign up</a></p>
 
             </div>
             
