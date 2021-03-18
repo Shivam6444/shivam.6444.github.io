@@ -26,7 +26,7 @@
 
             <div class="col-md-8">
                 <div class="card-body text-light pt-4" style="font-family:'Eina Regular',sans-serif;">
-                    <h5 class="card-title mb-3" style="font-family:'Eina Regular',sans-serif;color:#ffd663;">Pick up until <strong style="color:white;">1:00pm</strong> from <a style="font-family:'Eina Regular',sans-serif;color:white;font-weight:bold;">Nova Groceries</a></h5>
+                    <h5 class="card-title mb-3" style="font-family:'Eina Regular',sans-serif;color:#ffd663;">Pick up until <strong style="color:white;font-family:'Eina Bold',sans-serif;">1:00pm</strong> from <strong style="color:white;font-family:'Eina Bold',sans-serif;">Nova Groceries</strong></h5>
                     <h5 class="card-title text-light" style="font-family:'Eina Bold',sans-serif;">Butter Chicken Naan</h5>
                         <h6 class="card-text">
                         Butter Chicken cooked with traditional indian spices served with tandoori naan.</h6>
