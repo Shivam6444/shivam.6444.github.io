@@ -1,5 +1,22 @@
+@font-face {
+  font-family: 'Eina Regular';
+  src: url(../fonts/Eina01-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Eina Bold';
+  src: url(../fonts/Eina01-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Eina XBold';
+  src: url(../fonts/Eina01-Bold.ttf);
+}
+
+
+
 h3 {
-    font-family: 'DM Sans'!important;
+    font-family: 'Eina Bold'!important;
     overflow: hidden;
     text-align: center;
   }

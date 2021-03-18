@@ -10,7 +10,7 @@
     $calendar_data[$day_alpha]  = (string)date("d", time()+(86400 * $i)); 
     $mapped_date[$day_alpha] = (string)date("Ymd", time() + (86400 * $i));
   }
-   
+  
 
   //Selecting the active class
   $all_possible_days = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
@@ -63,7 +63,7 @@
 ?>
   <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
     <a href="<?php echo './home.php?day='.$day.'&slot='.$active_slot; ?>" type="button" id="calendar-btn" class="<?php echo $classes; ?>" style="<?php echo $styles; ?>">
-      <?php echo $day; ?>
+      <?php echo substr($day, 0,3); ?>
       <br><strong><h4 style="margin-top:.5rem;font-weight:bold;"><?php echo $date_num; ?></h4></strong>
     </a>
   </div>
@@ -118,10 +118,10 @@
 <div class="btn-toolbar mb-2 float-end" role="group" aria-label="Basic radio toggle button group" style="font-family:'Eina Regular',sans-serif;border-radius:.5rem;">
 
 <div class="btn-groupshadow-0 text-center" role="group" aria-label="First group" style="width:auto;">
-    <a href="<?php echo './home.php?day='.$active_day.'&slot=lunch'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'lunch'){ echo 'active'; }?>"  style="font-size:1rem;text-transform:initial;font-weight:bold;">Lunch</a>
+    <a href="<?php echo './home.php?day='.$active_day.'&slot=lunch'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'lunch'){ echo 'active'; }?>"  style="font-family:'Eina Regular',sans-serif;font-size:1rem;text-transform:initial;">Lunch</a>
   </div>
   <div class="btn-group shadow-0 text-center" role="group" aria-label="First group" style="width:auto;">
-    <a href="<?php echo './home.php?day='.$active_day.'&slot=dinner'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'dinner'){ echo 'active'; }?>" style="font-size:1rem;text-transform:initial;font-weight:bold;">Dinner</a>
+    <a href="<?php echo './home.php?day='.$active_day.'&slot=dinner'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'dinner'){ echo 'active'; }?>" style="font-family:'Eina Regular',sans-serif; font-size:1rem;text-transform:initial;">Dinner</a>
   </div>
   </div>
 

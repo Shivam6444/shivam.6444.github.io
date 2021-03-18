@@ -3,6 +3,12 @@
     src: url(../fonts/Eina01-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'Eina Bold';
+    src: url(../fonts/Eina01-SemiBold.ttf);
+}
+
+
 body{
     -webkit-font-smoothing: antialiased;
     
@@ -10,7 +16,6 @@ body{
 
 #navbarDropdownMenuLink{
     font-family: 'Eina Regular', sans-serif;
-    font-weight: bold;
     font-size: 1rem;
     color: rgb(0, 0, 0);
 }
@@ -107,8 +112,7 @@ p{
 }
 
 #banner-image-heading {
-    font-family: 'Eina Regular',sans-serif;
-    font-weight: bolder;
+    font-family: 'Eina Bold',sans-serif;
     letter-spacing: -.1rem;
 }
 
@@ -125,6 +129,7 @@ p{
     border-radius: 1rem;
     box-shadow: none;
     color: #ffffff!important;
+    font-weight: bold;
 }
 
 .btn-white.active:focus{
@@ -140,7 +145,6 @@ p{
 .btn-black{
     border-radius: 1rem;
 }
-
 
 #login-google{
     text-decoration: none;

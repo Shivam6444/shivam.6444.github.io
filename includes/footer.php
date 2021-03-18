@@ -19,7 +19,7 @@
               <div class="row">
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 style="font-weight:bold">Get to know us</h5>
+                  <h5 style="font-family:Eina Bold,sans-serif;">Get to know us</h5>
 
                   <ul class="list-unstyled text-left mb-0">
                     <li>
@@ -37,7 +37,7 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 style="font-weight:bold">Help</h5>
+                  <h5 style="font-family:Eina Bold,sans-serif;">Help</h5>
 
                   <ul class="list-unstyled mb-0">
                     <li>
@@ -59,7 +59,7 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 style="font-weight:bold">Let's do business</h5>
+                  <h5 style="font-family:Eina Bold,sans-serif;">Let's do business</h5>
 
                   <ul class="list-unstyled mb-0">
                     <li>
@@ -77,7 +77,7 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 style="font-weight:bold">Sign up for our newsletter</h5>
+                  <h5 style="font-family:Eina Bold,sans-serif;">Sign up for our newsletter</h5>
                                         <!-- Section: Social media -->
                       <section class="mb-5 text-left" style="border-bottom: 1px 1px solid #202020;">
                         <!-- Facebook -->
@@ -119,6 +119,7 @@
             </div>
           </div>
           <!-- Copyright -->
+          <script type="text/javascript" src="../js/validate-card.js"></script>
         </footer>
         <!-- Footer -->
 

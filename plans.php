@@ -9,7 +9,7 @@
         <div class="card-body">
         <div class="row">
 
-        <h1 class="text-black text-center mb-4" style="font-family:'DM Sans',sans-serif;margin-top:1rem;font-weight:bold;">
+        <h1 class="text-black text-center mb-4" style="font-family:'Eina Bold',sans-serif;margin-top:1rem;">
         <span>
           <?xml version="1.1" encoding="UTF-8"?>
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 750 749.999995" version="1.2" style="margin-bottom:.5rem;">
@@ -34,7 +34,7 @@
 
         
 
-        <div class="row text-black text-center justify-content-center" style="font-size:2rem;margin-top:0rem;margin:0 auto;">
+        <div class="row text-black text-center justify-content-center" style="font-family:'Eina Regular';font-size:2rem;margin-top:0rem;margin:0 auto;">
         I want
         <select class="form-select text-center w-auto form-select-lg mb-2 border-0" style="font-size:2rem;margin-top:-.5rem;color:#ffb22f;font-weight:bold;" aria-label=".form-select-lg example">
             <option class="text-center" selected>5 meals</option>
@@ -57,7 +57,7 @@
         <div class="p-2 border-line mb-4">
 
           <p class="text-dark me-2" style="
-            font-family:'DM Sans',sans-serif;
+            font-family:'Eina Bold',sans-serif;
             font-size:1.5rem;
             font-weight:bolder;
             margin-bottom:-.5rem;">
@@ -73,7 +73,7 @@
           </p>
 
           <p style="
-          font-family:'DM Sans',sans-serif;
+          font-family:'Eina Regular',sans-serif;
           font-size:1rem;
           margin-top:-1rem">
           per meal
@@ -83,14 +83,14 @@
 
         <div class="p-2">
 
-          <p class="text-dark" style="font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:bold;margin-bottom:-.5rem;">You save</p>
+          <p class="text-dark" style="font-family:'Eina Bold',sans-serif;font-size:1.5rem;font-weight:bold;margin-bottom:-.5rem;">You save</p>
             <p class="mb-1" style="font-family:'DM Sans',sans-serif;color:#ffb22f;font-size:2.5rem;font-weight:bold;">$71.55</p>
-              <p style="font-family:'DM Sans',sans-serif;font-size:1rem;margin-top:-1rem">(20% discount)</p>
+              <p style="font-family:'Eina Bold',sans-serif;font-size:1rem;margin-top:-1rem">(20% discount)</p>
         </div>
         </div>
         </section>
 
-        <a class="btn btn-lg btn-black btn-rounded w-50 mb-1 mx-1 text-white waves-effect"  id="meal-plan-button" style="margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem;font-weight: bold;">Select this meal plan</a>
+        <a href="checkout.php" class="btn btn-lg btn-black btn-rounded w-50 mb-1 mx-1 text-white waves-effect"  id="meal-plan-button" style="font-weight:'Eina Bold';margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem;font-weight: bold;">Select this meal plan</a>
 
         </p>
         </div>
@@ -108,7 +108,7 @@
         <div class="card-body">
         <div class="row">
         
-        <h1 class="text-black text-center mb-4" style="font-family:'DM Sans',sans-serif;margin-top:1rem;font-weight:bold;">
+        <h1 class="text-black text-center mb-4" style="font-family:'Eina Bold',sans-serif;margin-top:1rem;font-weight:bold;">
         <span>
           <?xml version="1.0" encoding="UTF-8"?>
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 750 749.999995" version="1.2" style="margin-bottom:.5rem;">
@@ -135,7 +135,7 @@
           <!-- <div class = "text-center mb-4">
             I want <strong style="color: #ffb22f">Butter Chicken and Rice</strong> for <strong>$8.49</strong>
           </div> -->
-          <a class="btn btn-lg text-black w-75 mb-4 mx-1" href="#!" role="button" style="margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem; background-color: #ffb22f;font-weight: bold;">Get your Butter Chicken and Rice now for $8.49</a
+          <a class="btn btn-lg text-black w-75 mb-4 mx-1" href="#!" role="button" style="font-family:'Eina XBold';margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem; background-color: #ffb22f;font-weight: bold;">Get your Butter Chicken and Rice now for $8.49</a
                 >
         </div>
         </div>
@@ -144,7 +144,7 @@
   
         <div class = "row">
         <div class="col mb-5 text-black text-center" style="font-size:2rem;margin-top:0rem;">
-        <h2 class="text-black text-center mb-3" style="font-family:'DM Sans',sans-serif;margin-top:2rem;font-weight:bold;">
+        <h2 class="text-black text-center mb-3" style="font-family:'Eina Bold',sans-serif;margin-top:2rem;font-weight:bold;">
           Our hubs around Halifax <hr class="w-75" style="margin: 0 auto;margin-top:1rem;"></hr></h2>
           <div id="map-container-google-11" class="z-depth-3-full map-container-5" style="height: 200px">
           <iframe src="https://maps.google.com/maps?q=Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"

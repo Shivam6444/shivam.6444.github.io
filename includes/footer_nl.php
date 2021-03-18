@@ -39,7 +39,7 @@
         <div class="row">
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5>Get to know us</h5>
+            <h5 style="font-family:Eina Bold,sans-serif;">Get to know us</h5>
   
             <ul class="list-unstyled text-left mb-0">
               <li>
@@ -57,7 +57,7 @@
   
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5>Help</h5>
+            <h5 style="font-family:Eina Bold,sans-serif;">Help</h5>
   
             <ul class="list-unstyled mb-0">
               <li>
@@ -78,7 +78,7 @@
   
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5>Let's do business</h5>
+            <h5 style="font-family:Eina Bold,sans-serif;">Let's do business</h5>
   
             <ul class="list-unstyled mb-0">
               <li>
@@ -96,7 +96,7 @@
   
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5>Sign up for our newsletter</h5>
+            <h5 style="font-family:Eina Bold,sans-serif;">Sign up for our newsletter</h5>
 
           </div>
           <!--Grid column-->

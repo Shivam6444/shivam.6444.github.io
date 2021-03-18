@@ -41,7 +41,7 @@
     
         <div class="card mb-5 shadow-lg">
         <div class="card-body">
-        <h2 class="card-title text-center" style="font-weight:bold;">Log in</h2>
+        <h2 class="card-title text-center" style="font-family:'Eina Bold',sans-serif;">Log in</h2>
         <form method="post" action="backend/login.php">
           
             <!-- Email input -->
