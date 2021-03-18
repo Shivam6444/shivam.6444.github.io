@@ -45,6 +45,9 @@ require_once "./includes/verification.php";
         else if($current_file_name == 'checkout.php'){
             echo "<link rel=\"stylesheet\" href=\"css/checkout.css\" />";
         }
+        else if($current_file_name == 'scheduled.php'){
+            echo "<link rel=\"stylesheet\" href=\"css/scheduled.css\" />";
+        }
     ?>
 
   </head>
@@ -63,7 +66,7 @@ require_once "./includes/verification.php";
             ?>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="../home.html" id="nav-logo">
+                <a class="navbar-brand" href="index.php" id="nav-logo">
                     <img
                     src="./img/mealful-22.svg"
                     height="38"
@@ -87,7 +90,7 @@ require_once "./includes/verification.php";
             <!--Navbar and Logo-->
             <nav class="navbar navbar-expand-lg navbar-white bg-white fixed-top shadow-md">
                 <div class="container">
-                <a class="navbar-brand" href="#" id="nav-logo-home">
+                <a class="navbar-brand" href="home.php" id="nav-logo-home">
                     <img
                     src="./img/mealful-22.svg"
                     height="38"
@@ -110,7 +113,7 @@ require_once "./includes/verification.php";
                 <!--Avatar-->
                     <ul class="navbar-nav d-flex flex-row ms-auto mb-2 mb-lg-0" id="avatar-menu">
                     <li class="nav-item" id="calendar-upcoming">
-                        <a class="nav-link text-dark btn-rounded waves-effect" href="#" id="" style="font-family:'Eina Regular', sans-serif;margin-top:.5rem;margin-right:2rem;padding-left:1rem;padding-right:1rem;border-radius:10rem;">Scheduled
+                        <a class="nav-link text-dark btn-rounded waves-effect" href="scheduled.php" id="" style="font-family:'Eina Regular', sans-serif;margin-top:.5rem;margin-right:2rem;padding-left:1rem;padding-right:1rem;border-radius:10rem;">Scheduled
                         </a>
                     </li>
                     <li class="nav-item dropdown">
@@ -121,6 +124,7 @@ require_once "./includes/verification.php";
                         role="button"
                         data-mdb-toggle="dropdown"
                         aria-expanded="false"
+                        style="font-family:'Eina Regular', sans-serif;"
                         >
                         <img
                             src="./img/users.svg"
@@ -134,7 +138,7 @@ require_once "./includes/verification.php";
                         <!--Extract first name using string trim in PHP? Function to limit name size to 16 so that it doesnt push the margin way beyond, if first name more than 16 characters, add ........-->
                         Hello, <?php echo $_SESSION['fname']; ?>
                         </a>
-                        <ul class="dropdown-menu shadow-lg" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu shadow-lg" aria-labelledby="navbarDropdownMenuLink" style="font-family:'Eina Regular', sans-serif;font-size:1.1rem;">
                         <li><a class="dropdown-item" href="#" id="menu-link1">Profile</a></li>
                         <li><a class="dropdown-item" href="#" id="menu-link1">Account Settings</a></li>
                         <li><a class="dropdown-item" href="#" id="menu-link1">Order History</a></li>

@@ -127,7 +127,7 @@
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-lg btn-black" style="text-transform:initial; width:100%; font-size:1.1rem;font-weight:bold;letter-spacing:.05rem;">Schedule 1 item</button>
+                        <a href="scheduled.php" type="button" class="btn btn-lg btn-black" style="text-transform:initial; width:100%; font-size:1.1rem;font-weight:bold;letter-spacing:.05rem;">Schedule 1 item</a>
                       </div>
                     </div>
                   </div>

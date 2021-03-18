@@ -51,7 +51,7 @@
         <form method="post" action="backend/register_user.php" class="row g-2">
 
             <!-- First Name -->
-            <div class="form-floating col-md-6 mb-3">
+            <div class="form-floating col-md-6 pr-3 mb-3">
               <input name="first_name"  class="form-control" id="floatingInput" placeholder="Name" required style="border-radius: .5em;">
               <label for="floatingInput">First Name</label>
             </div>

@@ -58,10 +58,10 @@
     }
     else{
       $styles="font-size:1.1rem;text-transform:initial;";
-      $classes="btn btn-white text-black";
+      $classes="btn btn-white text-dark";
     }
 ?>
-  <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
+  <div class="btn-group me-2 shadow-0 text-dark text-center" role="group" aria-label="First group" style="width:13.669%;">
     <a href="<?php echo './home.php?day='.$day.'&slot='.$active_slot; ?>" type="button" id="calendar-btn" class="<?php echo $classes; ?>" style="<?php echo $styles; ?>">
       <?php echo substr($day, 0,3); ?>
       <br><strong><h4 style="margin-top:.5rem;font-weight:bold;"><?php echo $date_num; ?></h4></strong>
@@ -108,16 +108,16 @@
 </div>
 </div> -->
 <div class="container">
-<hr class ="mb-4" id="menu-divider"></hr>
+<hr class ="mb-5" id="menu-divider"></hr>
 </div>
 
 
 
 <div class="container">
 
-<div class="btn-toolbar mb-2 float-end" role="group" aria-label="Basic radio toggle button group" style="font-family:'Eina Regular',sans-serif;border-radius:.5rem;">
+<div class="btn-toolbar mb-0 float-end" role="group" aria-label="Basic radio toggle button group" style="font-family:'Eina Regular',sans-serif;border-radius:.5rem;">
 
-<div class="btn-groupshadow-0 text-center" role="group" aria-label="First group" style="width:auto;">
+<div class="btn-group shadow-0 text-center" role="group" aria-label="First group" style="width:auto;">
     <a href="<?php echo './home.php?day='.$active_day.'&slot=lunch'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'lunch'){ echo 'active'; }?>"  style="font-family:'Eina Regular',sans-serif;font-size:1rem;text-transform:initial;">Lunch</a>
   </div>
   <div class="btn-group shadow-0 text-center" role="group" aria-label="First group" style="width:auto;">
@@ -127,9 +127,9 @@
 
 
 
-  <h5 class = "text-left text-black mb-3" style="font-family:'Montserrat',sans-serif; font-size: 2.5rem; letter-spacing: -.1rem; font-weight: bold;">Lunch menu</h5>
-  <div class="alert dialog alert-warning" role="alert" style="border-radius: 1.8rem;margin-bottom:2rem;">
-  <p class="card-text text-black">
+  <h2 class = "text-left text-dark mb-0" style="font-family:'Eina Regular',sans-serif; letter-spacing: 0rem;font-weight:bolder;">Lunch menu</h2>
+  <div class="alert dialog alert-warning" role="alert" style="border-radius: 1.1rem;margin-bottom:2rem;">
+  <p class="card-text text-dark">
     <span><?xml version="1.0" encoding="iso-8859-1"?>
       <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

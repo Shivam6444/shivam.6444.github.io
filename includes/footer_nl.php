@@ -112,7 +112,7 @@
     <div class="text-left p-2" style="background-color: rgb(255, 255, 255);">
       <div class="container">
         <hr></hr>
-        <a cfass="text-dark" style="font-family: 'DM Sans',sans-serif; font-size: 1rem;" href="https://mdbootstrap.com/">© 2021 Copyright: Mealful Inc.</a>
+        <a cfass="text-dark" style="font-family: 'DM Sans',sans-serif; font-size: 0.8rem;" href="https://mdbootstrap.com/">© 2021 Copyright: Mealful Inc.</a>
       </div>
     </div>
     </footer>

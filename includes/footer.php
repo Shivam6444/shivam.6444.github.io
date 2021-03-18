@@ -1,8 +1,7 @@
 <!-- Footer -->
-<footer class="text-light" style="background-color: rgb(20, 20, 20);">
+<footer class="text-light" style="background-color: rgb(20, 20, 20);font-family:'Eina Regular',sans-serif;">
           <!-- Grid container -->
           <div class="container p-4">
-
             <a class="navbar-brand mb-4" href="#" id="footer-logo">
               <img
                 src="img/mealful-23.svg"
@@ -10,8 +9,6 @@
                 alt="" 
               />
             </a>
-
-
 
             <!-- Section: Links -->
             <section class="">
@@ -115,7 +112,7 @@
           
           <div class="text-left p-2" style="background-color: rgb(18, 18, 18);">
           <div class="container">
-            <h6 class="text-white" style="font-family: 'Eina Regular',sans-serif; font-size: 1rem;font-weight:bold" href="#">© 2021 Copyright: Mealful Inc.</h6>
+            <h6 class="text-white" style="font-family: 'Eina Regular',sans-serif; font-size: 1rem;" href="#">© 2021 Copyright: Mealful Inc.</h6>
             </div>
           </div>
           <!-- Copyright -->

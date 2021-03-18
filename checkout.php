@@ -2,33 +2,33 @@
   include "includes/header.php";
 ?>
 
-<div class="container-fluid text-start">
+<div class="container-fluid">
        
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center g-2">
         <div class="card mb-5 shadow-lg">
-        <div class="card-body">
-        <h2 class="card-title text-center" style="font-family:'Eina Bold',sans-serif;">Checkout</h2>
-        <form method="post" novalidate autocomplete="on" action="backend/register_user.php" class="row g-2">
+        <div class="card-body mr-2 ml-2 mb-2">
+        <h2 class="card-title text-center mb-2" style="font-family:'Eina Bold',sans-serif;margin-top:-.5rem">Checkout</h2>
+        <form method="post" novalidate autocomplete="on" action="backend/register_user.php" class="row g-3">
 
             <!-- Email input -->
-            <div class="form-outline mb-3">
+            <div class="form-outline">
               <i class="fas fa-credit-card trailing"></i>
               <input type="text" id="form1" class="form-control form-control-lg form-icon-trailing cc-number" placeholder="1234 1234 1234 1234" style="border-radius: .5em;"/>
               <label class="form-label" for="form1">Card number</label>
             </div>
 
             <!-- LastName input -->
-            <div class="form-outline col-md-4 mr-3 mb-3">
+            <div class="form-outline col-md-4 mr-3 mb-1">
               <input type="text" id="form1" class="form-control form-control-lg cc-exp" placeholder="MM/YYYY" style="border-radius: .5em;"/>
               <label class="form-label" for="form1">Expiry Date</label>
             </div>
 
-            <div class="form-outline col-md-3 mr-3 mb-3">
+            <div class="form-outline col-md-3 mr-3 mb-1">
               <input type="text" id="form1" class="form-control form-control-lg cc-cvc" placeholder="123" style="border-radius: .5em;"/>
               <label class="form-label" for="form1">CVV</label>
             </div>
 
-            <div class="form-outline col-md-4 mb-3">
+            <div class="form-outline col-md-4 mb-1">
               <input type="text" id="form1" class="form-control form-control-lg cc-exp" placeholder="A1A 1A1" style="border-radius: .5em;"/>
               <label class="form-label" for="form1">Postal Code</label>
             </div>
