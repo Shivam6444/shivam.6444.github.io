@@ -10,7 +10,7 @@
     $calendar_data[$day_alpha]  = (string)date("d", time()+(86400 * $i)); 
     $mapped_date[$day_alpha] = (string)date("Ymd", time() + (86400 * $i));
   }
-  
+   
 
   //Selecting the active class
   $all_possible_days = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
