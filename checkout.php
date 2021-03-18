@@ -1,95 +1,84 @@
 <?php
   include "includes/header.php";
 ?>
+<style>
+  .StripeElement {
+    background-color: white;
+    height: 40px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
 
-<div class="container-fluid text-start">
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+</style>
+<!-- <div class="container-fluid text-start">
        
         <div class="row d-flex justify-content-center">
         <div class="card mb-5 shadow-lg">
         <div class="card-body">
         <h2 class="card-title text-center" style="font-family:'Eina Bold',sans-serif;">Checkout</h2>
-        <form method="post" novalidate autocomplete="on" action="backend/register_user.php" class="row g-2">
+        <form method="post"  id="payment-form"  class="row g-2">
 
-            <!-- Email input -->
-            <div class="form-outline mb-3">
-              <i class="fas fa-credit-card trailing"></i>
-              <input type="text" id="form1" class="form-control form-control-lg form-icon-trailing cc-number" placeholder="1234 1234 1234 1234" style="border-radius: .5em;"/>
-              <label class="form-label" for="form1">Card number</label>
+      
+
+            <div id="card-element" class="form-control">
+           
             </div>
 
-            <!-- LastName input -->
-            <div class="form-outline col-md-4 mr-3 mb-3">
-              <input type="text" id="form1" class="form-control form-control-lg cc-exp" placeholder="MM/YYYY" style="border-radius: .5em;"/>
-              <label class="form-label" for="form1">Expiry Date</label>
-            </div>
-
-            <div class="form-outline col-md-3 mr-3 mb-3">
-              <input type="text" id="form1" class="form-control form-control-lg cc-cvc" placeholder="123" style="border-radius: .5em;"/>
-              <label class="form-label" for="form1">CVV</label>
-            </div>
-
-            <div class="form-outline col-md-4 mb-3">
-              <input type="text" id="form1" class="form-control form-control-lg cc-exp" placeholder="A1A 1A1" style="border-radius: .5em;"/>
-              <label class="form-label" for="form1">Postal Code</label>
-            </div>
-
-              
-            <script>
-                $('.cc-number').on('keypress change blur', function () {
-                    $(this).val(function (index, value) {
-                        return value.replace(/[^a-z0-9]+/gi, '').replace(/(.{4})/g, '$1 ');
-                    });
-                });
-                // $('.form-control-lg').keyup(function() {
-                // var foo = $(this).val().split("-").join(""); // remove hyphens
-                // if (foo.length > 0) {
-                //   foo = foo.match(new RegExp('.{1,4}', 'g')).join("-");
-                // }
-                // $(this).val(foo);
-                // });
-                $(function ($) {
-                  $('[data-numeric]').payment('restrictNumeric');
-                  $('.cc-exp').payment('formatCardExpiry');
-                  $('.cc-cvc').payment('formatCardCVC');
-
-                  $.fn.toggleInputError = function (erred) {
-                      this.parent('.form-group').toggleClass('has-error', erred);
-                      return this;
-                  };
- 
-                  $('form').submit(function (e) {
-                      e.preventDefault();
-
-                      var cardType = $.payment.cardType($('.cc-number').val());
-                      $('.cc-number').toggleInputError(!$.payment.validateCardNumber($('.cc-number').val()));
-                      $('.cc-exp').toggleInputError(!$.payment.validateCardExpiry($('.cc-exp').payment('cardExpiryVal')));
-                      $('.cc-cvc').toggleInputError(!$.payment.validateCardCVC($('.cc-cvc').val(), cardType));
-                      $('.cc-brand').text(cardType);
-
-                      $('.validation').removeClass('text-danger text-success');
-                      $('.validation').addClass($('.has-error').length ? 'text-danger' : 'text-success');
-                  });
-
-              });
-            </script>
-          
+            <div id="card-errors" role="alert"></div>
           
             </div>
+
+        </form>
           
-            <!-- Submit button -->
-            <div class="col d-flex mb-2 justify-content-center">
-            <button type="submit" id="login-button" name="registerUser" class="btn btn-primary mx-1 mb-3" style="font-family:'Eina Bold',sans-serif!important;">Continue</button>
-            </div>
-          
-            
-            <input type="hidden" name="loginToken" value="<?php echo $_SESSION['secret_token']; ?>">
-            
-          </form>
         </div>
         </div>
      
         </div>
+</div> -->
+    
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+    <div class="card mb-5 shadow-lg">
+    <div class="card-body">
+    <h2 class="card-title text-center" style="font-family:'Eina Bold',sans-serif;">Checkout</h2>
+    <form action="./charge.php" method="post" id="payment-form">
+      <div class="form-row">
+       <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
+       <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">
+        <div id="card-element" class="form-control">
+          <!-- a Stripe Element will be inserted here. -->
+        </div>
+
+        <!-- Used to display form errors -->
+        <div id="card-errors" role="alert"></div>
+        </div>
+
+      <button>Submit Payment</button>
+    </form>
+  </div>
     </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="./js/charge.js"></script>
+    
+
 
     <?php
   include "includes/footer_nl.php";
