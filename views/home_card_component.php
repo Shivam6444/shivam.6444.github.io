@@ -12,6 +12,16 @@
             //   print_r($data);
             // }
 
+            $HUBS = 
+            [
+              "1" => "1333 South Park St.",
+              "2" => "Nova Groceries",
+              "3" => "Jerry's Kwikway, 2122 Inglis Street B3J 0C5",
+              "4" => "1333 South Park St.",
+              "5" => "1333 South Park St.",
+              "6" => "1333 South Park St."
+            ];
+
           ?> 
 
             <div class="col mb-3">
@@ -60,7 +70,7 @@
                           aria-label="Close"
                           style=""
                         >
-                        </button>
+                        </button> 
 
                       </div>
                       <div class="modal-body">
@@ -90,19 +100,12 @@
                               <div class="row" style="height:auto;">
                                 <div class="col-md-12">
                                   <div class="form-group" style="height:auto;">
+                                    <select class="selectpicker form-control show-tick" data-size="20" data-dropup-auto="false" >
+                                      <?php
+                                        
+                      
 
-                                    <select 
-                                        class="selectpicker form-control show-tick" 
-                                        data-size="20" 
-                                        data-live-search="true"
-                                        data-dropup-auto="false" 
-                                      >
-                                      
-                                      <option>Nova Groceries, 5502 Clyde Street</option>
-                                      <option>Jerry's Kwikway, 5465 Inglis Street</option>
-                                      <option>L A Smith Convenience, 1646 Barrington Street</option>
-                                      <option>SNAXX Convenience, 1781 Upper Water Street</option>
-                                      <option>The BP Corner Store, 1903 Barrington Street</option>
+                                      ?>
                                     </select>
                                   </div>
                                 </div>
