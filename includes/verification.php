@@ -23,6 +23,7 @@
             $_SESSION['lname'] = $data['last_name'];
             $_SESSION['email'] = $data['email'];
             $_SESSION['phone'] = $data['phone'];
+            $_SESSION['user_id'] = $data['user_id'];
             $loggedIn = true;
         }
         else{

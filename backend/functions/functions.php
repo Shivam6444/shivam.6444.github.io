@@ -1,4 +1,7 @@
 <?php
+
+
+
 /*
     * returns:  
     - session object if the session is valid
@@ -14,7 +17,7 @@ function verifyLogin($access_token){
     if($result->num_rows == 1){
         $user_id = $result->fetch_assoc()['user_id'];
  
-        $sql = "SELECT `first_name`, `last_name`, `email`, `phone` from user WHERE user_id = '{$user_id}'";
+        $sql = "SELECT `user_id`,`first_name`, `last_name`, `email`, `phone` from user WHERE user_id = '{$user_id}'";
         $result = $conn->query($sql);
 
         if($result->num_rows == 0){
@@ -363,6 +366,9 @@ function send_sms($phone_number, $message){
 
 }
 
+
+
+
 /*
 
     This function fixes the phone number.
@@ -406,6 +412,8 @@ function fix_phone_number($area_code, $phone_number){
         return false;
     }
 }
+
+
 
 
 //----- View fetch calls ---//
@@ -465,5 +473,8 @@ function adjust_length($input){
 }
 
 //------------END HELPER FUNCTIONS ----------//
+
+
+
 
 ?>

@@ -2,21 +2,20 @@
   include "includes/header.php";
 ?>
 <style>
+  @font-face {
+      font-family: 'Eina Regular';
+      src: url(../fonts/Eina01-Regular.ttf);
+  }
 
-@font-face {
-    font-family: 'Eina Regular';
-    src: url(../fonts/Eina01-Regular.ttf);
-}
+  @font-face {
+      font-family: 'Eina Bold';
+      src: url(../fonts/Eina01-SemiBold.ttf);
+  }
 
-@font-face {
-    font-family: 'Eina Bold';
-    src: url(../fonts/Eina01-SemiBold.ttf);
-}
-
-@font-face {
-    font-family: 'Eina XBold';
-    src: url(../fonts/Eina01-Bold.ttf);
-}
+  @font-face {
+      font-family: 'Eina XBold';
+      src: url(../fonts/Eina01-Bold.ttf);
+  }
 
   .StripeElement {
     background-color: white;
@@ -30,7 +29,7 @@
     font-family:'Eina Regular',sans-serif;
   }
 
-<div class="container-fluid">
+
 
   .StripeElement--focus {
     box-shadow: 0 1px 3px 0 #cfd7df;
@@ -44,23 +43,24 @@
     background-color: #fefde5 !important;
   }
 </style>
+  <?php
+    print_r($_POST);
+
+  ?>
 
   <div class="container">
     <div class="row d-flex justify-content-center">
     <div class="card mb-5 shadow-lg">
     <div class="card-body">
     <h2 class="card-title text-center" style="font-family:'Eina Bold',sans-serif;">Checkout</h2>
-    <form action="./charge.php" method="post" id="payment-form">
+    <form action="./backend/charge.php" method="post" id="payment-form">
       <div class="form-row">
        <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
        <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">
         <div id="card-element" class="form-control">
-          <!-- a Stripe Element will be inserted here. -->
         </div>
-
-        <!-- Used to display form errors -->
         <div id="card-errors" role="alert"></div>
-        </div>
+      </div>
 
       <button>Submit Payment</button>
     </form>
@@ -68,13 +68,14 @@
     </div>
     </div>
   </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
   <script src="./js/charge.js"></script>
-    
 
 
-    <?php
+
+<?php
   include "includes/footer_nl.php";
 ?>
 
