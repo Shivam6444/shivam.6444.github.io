@@ -90,14 +90,19 @@
                               <div class="row" style="height:auto;">
                                 <div class="col-md-12">
                                   <div class="form-group" style="height:auto;">
-                                    <select class="selectpicker form-control show-tick" data-size="20" data-dropup-auto="false" >
-                                      <option>Mustard gegege fe g re gregeg dd</option>
-                                      <option>Ketchup</option>
-                                      <option>Relish</option>
-                                      <option>Relish</option>
-                                      <option>Relish</option>
-                                      <option>Relish</option>
-                                      <option>Relish</option>
+
+                                    <select 
+                                        class="selectpicker form-control show-tick" 
+                                        data-size="20" 
+                                        data-live-search="true"
+                                        data-dropup-auto="false" 
+                                      >
+                                      
+                                      <option>Nova Groceries, 5502 Clyde Street</option>
+                                      <option>Jerry's Kwikway, 5465 Inglis Street</option>
+                                      <option>L A Smith Convenience, 1646 Barrington Street</option>
+                                      <option>SNAXX Convenience, 1781 Upper Water Street</option>
+                                      <option>The BP Corner Store, 1903 Barrington Street</option>
                                     </select>
                                   </div>
                                 </div>

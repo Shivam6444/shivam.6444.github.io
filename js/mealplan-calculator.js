@@ -17,12 +17,15 @@ var meal_pricing = {
                  "4" : "7.60"
             }
     };
+
+
 var SINGLE_MEAL_PRICE = 8.49;
 
 function selected(){
     var numWeeks = document.getElementById("num-weeks").value;
     var numMeals = document.getElementById("num-meals").value;
     var price = meal_pricing[numMeals][numWeeks];
+
     document.getElementById("price-para").innerHTML = "$"+price;
     var totalPrice = SINGLE_MEAL_PRICE * numMeals;
     var totalSaving = (totalPrice - (price * numMeals)).toFixed(2);
@@ -33,27 +36,34 @@ function selected(){
 }
 
 function formChosen(){
-    event.preventDefault();
-    var payCard = document.getElementById("payment-card");
-    payCard.style.display = '';
+    // event.preventDefault();
+    // var payCard = document.getElementById("payment-card");
+    // payCard.style.display = '';
 }
-function change() {
 
+function get_price($ever_subscribed, $eligible_for__ind_meal_discount, $qty, $weeks){
+    // $ever_subscribed
+    // $eligible_for__ind_meal_discount
+    // $qty
+    // $weeks
+    $price = $GLOBALS["PRICING"][$weeks][$qty];
 
-    var select = document.getElementById("slct");
-    var divv = document.getElementById("container");
-    var value = select.value;
-   
-    if (value == 1) {
-        toAppend = "<input type='textbox' >"; divv.innerHTML=toAppend; return;
-        }
-        if (value == 2) {
-            toAppend = "<input type='textbox' >&nbsp;<input type='textbox' >";divv.innerHTML = toAppend;  return;
-        }
-        if (value = 3) {
-            toAppend = "<input type='textbox' >&nbsp;<input type='textbox' >&nbsp;<input type='textbox' >";divv.innerHTML = toAppend;  return;
+    if($qty == 1 && $eligible_for__ind_meal_discount == true){
+        //send the price 
+        return round(($price *  (1 - ($GLOBALS["INDIVIDUAL_MEAL_DISCOUNT"] / 100))), 2);
+    }
+    else if($qty == 1 && $eligible_for__ind_meal_discount == false){
+        // send the price of individual meal without discount
+        return $price;
+    }
 
-        }
-    
-
+    else if($qty > 1 && $ever_subscribed == true){
+        // send usual meal prices
+        return $price;
+    }
+    else if($qty > 1 && $ever_subscribed == false){
+        //Send the price of discounted meal plan 
+        // return $qty *  * (.80) 
+        return round(($price *  (1 - ($GLOBALS["MEAL_PLAN_DISCOUNT"] / 100))), 2);
+    }
 }

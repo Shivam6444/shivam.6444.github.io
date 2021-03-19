@@ -1,5 +1,6 @@
 <?php
   include "includes/header.php";
+  include "backend/payment_information.php";
 
   
 ?>
@@ -30,7 +31,7 @@
               <hr class="w-75" style="margin: 0 auto; margin-top:-.5rem;"></hr>
               <div class="card-body">
                 <div class="row">
-                  <form method="post"  class="row text-black text-center justify-content-center" style="font-family:'Eina Regular';font-size:2rem;margin-top:0rem;margin:0 auto;">
+                  <form method="post" action="./checkout.php" class="row text-black text-center justify-content-center" style="font-family:'Eina Regular';font-size:2rem;margin-top:0rem;margin:0 auto;">
                     I want
                     <select 
                             name="numOfMeals" 
@@ -102,7 +103,7 @@
                     </section>
 
                     <button 
-                      onclick="formChosen()"
+                      type="submit"
                       class="btn btn-lg btn-black btn-rounded w-50 mb-1 mx-1 text-white waves-effect"  
                       id="meal-plan-button" 
                       style="font-weight:'Eina Bold';margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem;font-weight: bold;">
@@ -115,11 +116,11 @@
           
             </div>
 
-            <div class="container">
+            <!-- <div class="container">
               <div class="row d-flex justify-content-center">
           
                 <div class="card-body" id="payment-card" style="display: none;">
-                  <!-- <h2 class="card-title text-center" style="font-family:'Eina Bold',sans-serif;">Checkout</h2> -->
+                 
                   <form action="./backend/charge.php" method="post" id="payment-form">
                     <div class="form-row">
                       <div id="card-element" class="form-control">
@@ -136,7 +137,7 @@
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://js.stripe.com/v3/"></script>
-            <script src="./js/charge.js"></script>
+            <script src="./js/charge.js"></script> -->
           </div>
         </div>
 

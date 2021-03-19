@@ -45,9 +45,11 @@ function validate_price_token_user($user_id, $qty, $weeks,$price){
     if($is_new == NULL){
         return NULL;
     }
+
+    //*********THE LOGIC BELOW CAN BE BETTER***********/
     /* User is First time */
     if($is_new == true){
-        $actual_price = get_price(false, false, $qty, $weeks);
+        $actual_price = get_price(false, true, $qty, $weeks);
         if($actual_price == $price){
             return true;
         }
@@ -90,17 +92,24 @@ function get_price($ever_subscribed, $eligible_for__ind_meal_discount, $qty, $we
         return $price;
     }
     else if($qty > 1 && $ever_subscribed == false){
-        //Send the price of discounted meal plan 
-        // return $qty *  * (.80) 
         return round(($price *  (1 - ($GLOBALS["MEAL_PLAN_DISCOUNT"] / 100))), 2);
     }
 }
 
+/*
+    * This function returns:
+        NULL -> If the query wasn't successful
+        True -> if the user is new, and making transaction first time
 
+        An assoc array: 
+        [
+            'ever_subscribed', 
+            'individual_discount_elegibility'
+        ]
+*/
 
-function is_first_time_user($user_email_or_phone){
+function is_first_time_user($user_id){
     include "db.php";
-    $user_id = get_user_id($user_email_or_phone);
 
     if($user_id == false){
         return NULL;
@@ -143,23 +152,26 @@ function is_first_time_user($user_email_or_phone){
 
 /* 
     Helper methods
+
+    Returns NULL if query wasn't successful
+    Returns false if user does not exist in transaction table
 */
 
-function get_user_id($user_email_or_phone){
-    include "db.php";
-    $sql = "SELECT * from user where email = '{$user_email_or_phone}' or phone = '{$user_email_or_phone}'";
+// function get_user_id($user_email_or_phone){
+//     include "db.php";
+//     $sql = "SELECT * from user where email = '{$user_email_or_phone}' or phone = '{$user_email_or_phone}'";
 
-    $result = $conn->query($sql);
-    if(!$result){
-        return false;
-    }
-    if($result->num_rows == 1){
-        $user = $result->fetch_assoc();
-        return $user['user_id'];
-    }
-    else{
-        return false;
-    }
-}
+//     $result = $conn->query($sql);
+//     if(!$result){
+//         return NULL;
+//     }
+//     if($result->num_rows == 1){
+//         $user = $result->fetch_assoc();
+//         return $user['user_id'];
+//     }
+//     else{
+//         return false;
+//     }
+// }
 
 ?>
