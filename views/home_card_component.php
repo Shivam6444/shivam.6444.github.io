@@ -96,50 +96,66 @@
 
                         <p class="text-black text-center mb-2" style="font-family:'Eina Regular',sans-serif;margin-top:1rem;font-weight:bolder;font-size:1.1rem;">
                           Pick up your meal between 1pm to 4pm from:</p>
-
+                          <form>
                               <div class="row" style="height:auto;">
                                 <div class="col-md-12">
                                   <div class="form-group" style="height:auto;">
-                                    <select class="selectpicker form-control show-tick" data-size="20" data-dropup-auto="false" >
-                                      <?php
-                                        
-                      
 
-                                      ?>
+                                    <select class="selectpicker show-menu-arrow show-tick shadow-lg" data-width="auto" data-live-search="true" style="font-size:1.1rem;text-transform:unset!important;background-color:gray;">
+                                      <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup mustard">
+                                        Nova Groceries, 1333 South Park St
+                                      </option>
+                                      <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup mustard">
+                                        Big's General Store, 1243 University Ave.
+                                      </option>
+                                      <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup mustard">
+                                        Big's General Store, 1243 University Ave.
+                                      </option>
+                                      <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup mustard">
+                                        Big's General Store, 1243 University Ave.
+                                      </option>
+                                      <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup">
+                                        Big's General Store, 1243 University Ave.
+                                      </option>
                                     </select>
+
                                   </div>
                                 </div>
                               </div>
                         
-                         
-                          <!-- <select class="selectpicker show-menu-arrow show-tick" data-width="auto" style="font-size:1.1rem;text-transform:none!important;background-color:gray;">
-                            <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup mustard">
-                              Nova Groceries, 1333 South Park St
-                            </option>
-                            <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup mustard">
-                              Big's General Store, 1243 University Ave.
-                            </option>
-                            <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup mustard">
-                              Big's General Store, 1243 University Ave.
-                            </option>
-                            <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup mustard">
-                              Big's General Store, 1243 University Ave.
-                            </option>
-                            <option style="font-weight:bold;font-size:1rem;text-transform:none;" data-tokens="ketchup">
-                              Big's General Store, 1243 University Ave.
-                            </option>
-                            
-                          </select> -->
 
                         </div>
                         </div>
                       </div>
+
                       <div class="modal-footer">
-                        <a href="scheduled.php" type="button" class="btn btn-lg btn-black" style="text-transform:initial; width:100%; font-size:1.1rem;font-weight:bold;letter-spacing:.05rem;">Schedule 1 item</a>
+                      <div class="row g-3">
+
+                        <div class="col-md-5 p-2">
+                        <div class="input-group">
+                          <span class="input-group-btn">
+                            <button 
+                                class="btn btn-floating value-control" 
+                                style="background-color:#DBDBDB" 
+                                data-action="minus" data-min="0"  
+                                data-target="font-size"
+                                onclick="incrementQty()"
+                            >
+                          <span class="glyphicon glyphicon-minus"></span>-</button></span>
+                          <input type="text" value="1" class="form-control text-center" id="font-size"/>
+                          <span class="input-group-btn"><button class="btn btn-floating value-control"  style="background-color:#DBDBDB" data-action="plus" data-max="9" data-target="font-size"><span class="glyphicon glyphicon-plus"></span>+</button></span>
+                        </div>
+                        </div>
+                        <div class="col-md-7">
+                        <a href="scheduled.php" type="button" class="btn btn-lg btn-black text-light" style="font-family:'Eina Bold',sans-serif;text-transform:initial; width:100%; font-size:1.1rem;letter-spacing:.1rem;">Schedule 1 item</a>
+                        </div>
                       </div>
+                      </div>
+                    
                     </div>
                   </div>
                 </div>
+                </form>
             </div>
 
 

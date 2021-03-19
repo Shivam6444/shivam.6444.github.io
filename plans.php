@@ -11,6 +11,7 @@
           <div class="card-body">
             <div class="row">
               <h1 class="text-black text-center mb-4" style="font-family:'Eina Bold',sans-serif;margin-top:1rem;">
+              
                 <span>
                   <?xml version="1.1" encoding="UTF-8"?>
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 750 749.999995" version="1.2" style="margin-bottom:.5rem;">
@@ -26,6 +27,7 @@
                   </g>
                   </svg>
                 </span>
+
                 Choose your meal plan
               </h1>
               <hr class="w-75" style="margin: 0 auto; margin-top:-.5rem;"></hr>
@@ -46,6 +48,7 @@
                         <option value="10" selected>10 meals</option>
                         <option value="14">14 meals</option>
                     </select> per week for
+
                     <select 
                             name="numOfWeeks"
                             id="num-weeks"
@@ -193,17 +196,6 @@
             <input type="hidden" name="loginToken" value="<?php echo $_SESSION['secret_token']; ?>">
               
             </form>
-            <?php
-              if(isset($_GET['thirdParty'])){
-                if($_GET['thirdParty'] == 'fb'){
-                  $message = "Please login with Facebook.";
-
-                }
-                else if($_GET['thirdParty'] == 'Ggl'){
-                  $message = "Please login with Google.";
-                }
-              }
-            ?>
           </div>
           </div>
       

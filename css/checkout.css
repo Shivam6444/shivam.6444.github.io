@@ -59,55 +59,6 @@ p {
 
 }
 
-#login-button {
-    font-size: 1.25em;
-    border-radius: 2em;
-    background: rgb(0, 0, 0);
-    width: 24rem;
-    text-transform: initial;
-    transition: all .2s ease-in-out!important;
-}
-
-#login-button:hover {
-    color:#ffd663!important;
-}
-
-
-
-#login-facebook{
-    font-size: 1.25em;
-    border-radius: 2em;;
-    width: 24rem;
-    text-transform: initial;
-    transition: all .2s ease-in-out!important;
-}
-
-#login-facebook:hover {
-    text-decoration: none;
-}
-
-#login-google{
-    font-size: 1.25em;
-    border-radius: 2em;;
-    width: 24rem;
-    text-transform: initial;
-    margin-bottom: 2rem;
-    color: black;
-    transition: all .2s ease-in-out!important;
-}
-
-#login-google:hover {
-    text-decoration: none;
-}
-
-
-
-
-#remember-me{
-    padding-left: 1.5rem;
-    font-size: 1rem;
-}
-
 
 
 #register-link{
