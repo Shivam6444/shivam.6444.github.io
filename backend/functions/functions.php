@@ -17,7 +17,7 @@ function verifyLogin($access_token){
     if($result->num_rows == 1){
         $user_id = $result->fetch_assoc()['user_id'];
  
-        $sql = "SELECT `user_id`,`first_name`, `last_name`, `email`, `phone` from user WHERE user_id = '{$user_id}'";
+        $sql = "SELECT `user_id`,`first_name`, `last_name`, `email`, `phone`, `availableTokens` from user WHERE user_id = '{$user_id}'";
         $result = $conn->query($sql);
 
         if($result->num_rows == 0){
@@ -71,6 +71,53 @@ function new_user_by_phone($phone){
         return true;
     }
 }
+/*
+    Adds an order to the table, decreases the token
+*/
+
+function add_oder($user_id, $item_id, $hub_id, $qty){
+    include "db.php";
+    ////------------SANITIZATION-------------///
+
+    $user_id =  sanitize($user_id);
+    $hub_id =   sanitize($hub_id);
+    $item_id =  sanitize($item_id);
+    $qty =      sanitize($qty);
+    echo $user_id;
+    echo "HERE-------94";
+    if($hub_id == "" || $item_id == "" || $qty == ""){
+        return NULL;
+    }
+    if(!(is_numeric($hub_id)  && is_numeric($item_id) && is_numeric($qty))){
+        return NULL;
+    }
+    ///------------------------------////
+
+    
+    $conn->autocommit(FALSE);
+    $sql_order = "INSERT INTO `order_table` 
+    (`order_id`, `user_id`, `item_id`, `hub_id`, `qty`, `isScheduled`) VALUES 
+    (NULL, '{$user_id}', '{$item_id}', '{$hub_id}', '{$qty}', '1')";
+    $sql_decrease_token = "UPDATE `user` SET `availableTokens` = availableTokens-{$qty} WHERE `user`.`user_id` = {$user_id}";
+
+    $conn->query($sql_order); 
+    $conn->query($sql_decrease_token);
+
+    // Commit transaction
+    if (!$conn->commit()) {
+        echo "Commit transaction failed";
+        // Show Warning - Please try again or something, order not received
+        //Send email in the back
+        return NULL;
+    }
+    // Rollback transaction
+    $conn->rollback();
+    $conn->close();
+    return true;
+}
+
+
+
 /*
     Adds a user and logs him in
 
@@ -415,10 +462,11 @@ function fix_phone_number($area_code, $phone_number){
 
 
 
+//------------------------------===========================-------------------//
+//---------------------------------- View fetch calls -------------------//
+//------------------------------===========================-------------------//
 
-//----- View fetch calls ---//
-
-//Verify the dates, such that old menu is not fetched
+//Function get all the items for the specific date and slot
 function get_items($date, $slot){
 
     include "db.php";
@@ -428,23 +476,27 @@ function get_items($date, $slot){
     $slot = strtoupper($slot[0]);
     
     if($date != "" && $slot != ""){
-
+        
         $start_date = (string)date("Ymd", time()+(86400 * 0)); //Get today's date
         $end_date = (string)date("Ymd", time()+(86400 * 6));
        
         
         //Date have to be in the range of 7 days
         if(($date >= $start_date) && ($date <= $end_date)){
-          
+            
             if(is_numeric($date) && (strlen((string)$date) == 8)){
                 //Slot data check
                 
                 if($slot == 'L' || $slot == 'D'){
+                    
                     $sql = "SELECT * from Menu where date='{$date}' and slot='{$slot}'";
                     $result = $conn->query($sql);
-
                     if($result->num_rows != 0){
-                        return $result->fetch_assoc();
+                        $data = array();
+                        while($row = $result->fetch_assoc()){
+                            array_push($data, $row);
+                        }
+                        return $data;
                     }
                 }
             }
@@ -452,6 +504,63 @@ function get_items($date, $slot){
     }
     return false;
 }
+
+function get_chefs(){
+    include "db.php";
+    $sql = "SELECT `chef_id`, `chef_name` from chef WHERE isActive = 1";
+
+    $result = $conn->query($sql);
+
+    if(!$result){
+        $conn->close();
+        return NULL;
+    }
+
+    if($result->num_rows == 0){
+        $conn->close();
+        return false;
+    }
+    $data = array();
+    while($row = $result->fetch_assoc()){
+        $data[$row['chef_id']] = $row['chef_name'];
+    }
+    $conn->close(); 
+    return $data;
+}
+
+
+function get_hubs($lunch, $dinner)
+{
+    include "db.php";
+
+    if($lunch == true){
+        $sql = "SELECT * from hub WHERE lunch_slot = 1 and isActive = 1";
+    }
+    else if($dinner == true){
+        $sql = "SELECT * from hub where dinner_slot = 1 and isActive = 1";
+    }
+    $result = $conn->query($sql);
+    
+    if(!$result){
+        return NULL;
+    }
+    if($result->num_rows == 0){
+        return false;
+    }
+    else{
+        $data = array();
+        while($row = $result->fetch_assoc()){
+            array_push($data, $row);
+        }
+        $conn->close();
+        return $data;
+    }
+    // $conn->close(); 
+}
+
+//------------------------------===========================-------------------//
+//---------------------------------- View fetch calls Ended -------------------//
+//------------------------------===========================-------------------//
 
 
 //--------- HELPER FUNCTIONS ---------//
