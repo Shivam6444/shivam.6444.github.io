@@ -1,22 +1,20 @@
 <?php
   include "includes/header.php";
-  include "backend/payment_information.php";
+  // include "backend/payment_information.php";
 
   
 ?>
 
     <div class="container">
       <div class="row d-flex justify-content-center">
-        
-
         <div class="card mb-4 shadow-lg hover-shadow" id="card-component" style="margin-top:6rem;width:70%;">
           <div class="card-body">
             <div class="row">
-              <h1 class="text-black text-center mb-4" style="font-family:'Eina Bold',sans-serif;margin-top:1rem;">
+              <h1 class="text-dark text-center mb-2" style="font-family:'Eina Bold',sans-serif;margin-top:1rem;font-size:2rem;">
               
                 <span>
                   <?xml version="1.1" encoding="UTF-8"?>
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 750 749.999995" version="1.2" style="margin-bottom:.5rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="40px" viewBox="0 0 750 749.999995" version="1.2" style="margin-bottom:.5rem;">
                   <defs>
                   <clipPath id="clip1">
                     <path d="M 27.929688 27.929688 L 722.429688 27.929688 L 722.429688 722.429688 L 27.929688 722.429688 Z M 27.929688 27.929688 "/>
@@ -29,19 +27,18 @@
                   </g>
                   </svg>
                 </span>
-
                 Choose your meal plan
               </h1>
               <hr class="w-75" style="margin: 0 auto; margin-top:-.5rem;"></hr>
               <div class="card-body">
                 <div class="row">
-                  <form method="post" action="./checkout.php" class="row text-black text-center justify-content-center" style="font-family:'Eina Regular';font-size:2rem;margin-top:0rem;margin:0 auto;">
+                  <form method="post" action="./checkout.php" class="row text-dark text-center justify-content-center" style="font-family:'Eina Regular';font-size:1.75rem;margin-top:0rem;margin:0 auto;">
                     I want
                     <select 
                             name="numOfMeals" 
                             class="form-select text-center w-auto form-select-lg mb-2 border-0" 
                             id="num-meals" 
-                            style="font-size:2rem;margin-top:-.5rem;color:#ffb22f;font-weight:bold;" 
+                            style="font-size:1.75rem;margin-top:-.5rem;color:#ffb22f;font-weight:bold;" 
                             aria-label=".form-select-lg example"
                             onchange="selected()"
                       >
@@ -55,7 +52,7 @@
                             name="numOfWeeks"
                             id="num-weeks"
                             class="form-select text-center w-auto form-select-lg mb-1 border-0" 
-                            style="font-size:2rem;margin-top:-.75rem;color:#ffb22f;font-weight:bold;" 
+                            style="font-size:1.75rem;margin-top:-.75rem;color:#ffb22f;font-weight:bold;" 
                             aria-label=".form-select-lg example"
                             onchange="selected()"
                       >
@@ -67,8 +64,8 @@
                   
                     <!-- Price Display section -->
                     <section class="py-1" style="margin-top:0rem;">
-                      <div class="d-flex justify-content-center">
-                        <div class="p-2 border-line mb-4">
+                      <div class="d-flex justify-content-center" style="margin-top:-1rem;">
+                        <div class="p-2 border-line mb-2">
 
                           <p class="text-dark me-2" style="
                             font-family:'Eina Bold',sans-serif;
@@ -82,7 +79,7 @@
                             class="mb-1" 
                             style="font-family:'DM Sans',sans-serif;
                                    color:#ffb22f;
-                                   font-size:2.5rem;
+                                   font-size:2rem;
                                    font-weight:bold;"
                             id="price-para"
                             >
@@ -101,8 +98,8 @@
                         <div class="p-2">
 
                           <p class="text-dark" style="font-family:'Eina Bold',sans-serif;font-size:1.5rem;font-weight:bold;margin-bottom:-.5rem;">You save</p>
-                          <p id="total-save" class="mb-1" style="font-family:'DM Sans',sans-serif;color:#ffb22f;font-size:2.5rem;font-weight:bold;">$71.55</p>
-                          <p id="percent-discount-para" style="font-family:'Eina Bold',sans-serif;font-size:1rem;margin-top:-1rem">(20% discount)</p>
+                          <p id="total-save" class="mb-1" style="font-family:'DM Sans',sans-serif;color:#ffb22f;font-size:2rem;font-weight:bold;">$71.55</p>
+                          <p id="percent-discount-para" style="font-family:'Eina Regular',sans-serif;font-size:1rem;margin-top:-1rem">(20% discount)</p>
                         </div>
                       </div>
                     </section>
@@ -111,7 +108,7 @@
                       type="submit"
                       class="btn btn-lg btn-black btn-rounded w-50 mb-1 mx-1 text-white waves-effect"  
                       id="meal-plan-button" 
-                      style="font-weight:'Eina Bold';margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem;font-weight: bold;">
+                      style="font-weight:'Eina Bold';margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem;">
                         Select this meal plan
                     </button>
                   </form>
@@ -148,13 +145,13 @@
 
         <h3 class="text-dark"><span>or</span></h3>
 
-        <div class="card mb-3 shadow-lg hover-shadow" id="card-component" style="margin-top:1rem;width:70%;">
+        <div class="card mb-5 shadow-lg hover-shadow" id="card-component" style="margin-top:0rem;width:70%;">
           <div class="card-body">
             <div class="row">
-              <h1 class="text-black text-center mb-4" style="font-family:'Eina Bold',sans-serif;margin-top:1rem;font-weight:bold;">
+              <h1 class="text-dark text-center mb-2" style="font-family:'Eina Bold',sans-serif;margin-top:1rem;font-weight:bold;font-size:2rem;">
                 <span>
                   <?xml version="1.0" encoding="UTF-8"?>
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 750 749.999995" version="1.2" style="margin-bottom:.5rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="40px" viewBox="0 0 750 749.999995" version="1.2" style="margin-bottom:.5rem;">
                   <defs>
                   <clipPath id="clip1">
                     <path d="M 27.929688 27.929688 L 722.429688 27.929688 L 722.429688 722.429688 L 27.929688 722.429688 Z M 27.929688 27.929688 "/>
@@ -174,20 +171,130 @@
               <hr class="w-75 mb-5" style="margin: 0 auto; margin-top:-.5rem;"></hr>
             </div>
 
-            <div class="row text-black text-center justify-content-center" style="font-size:2rem;margin:0 auto;">
+            <div class="row text-dark text-center justify-content-center" style="font-size:2rem;margin:0 auto;">
               <!-- <div class = "text-center mb-4">
                 I want <strong style="color: #ffb22f">Butter Chicken and Rice</strong> for <strong>$8.49</strong>
               </div> -->
-              <a class="btn btn-lg text-black w-75 mb-4 mx-1" href="#!" role="button" style="font-family:'Eina XBold';margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem; background-color: #ffb22f;font-weight: bold;">Get your Butter Chicken and Rice now for $8.49</a
+              <a class="btn btn-lg text-light w-75 mb-4 mx-1" href="#!" role="button" style="font-family:'Eina Bold';margin-left: 3rem;text-transform: initial;font-size:1.5rem;border-radius:.5rem; background-color: #ffb22f;">Get your Butter Chicken and Rice now for $8.49</a
                     >
             </div>
           </div>
         </div>
         </div>
+
+        
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+          <h2 class="text-dark text-center mb-4" style="font-family:'Eina Bold',sans-serif;margin-top:2rem;font-weight:bold;color:rgb(66,66,66);">
+            Common questions</h2>
+          <div class="accordion accordion-flush w-75" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                  style="font-family:'Eina Regular',sans-serif;color:rgb(66,66,66);font-size:1.5rem;font-weight:bold;"
+                >
+                How does the subscription work?
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-mdb-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body"
+                style="font-family:'Eina Regular',sans-serif;color:rgb(66,66,66);font-size:1.1rem;"
+                >
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                  brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
+                  et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                  craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+                  heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                  style="font-family:'Eina Regular',sans-serif;color:rgb(66,66,66);font-size:1.5rem;font-weight:bold;"
+                >
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwo"
+                data-mdb-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body" 
+                style="font-family:'Eina Regular',sans-serif;color:rgb(66,66,66);font-size:1.1rem;"
+                >
+                  
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                  brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
+                  et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                  craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+                  heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                  style="font-family:'Eina Bold',sans-serif;color:rgb(66,66,66);font-size:1.5rem;"
+                >
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingThree"
+                data-mdb-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body"
+                style="font-family:'Eina Regular',sans-serif;color:rgb(66,66,66);font-size:1.1rem;">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                  brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
+                  et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                  craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+                  heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+          </div>
     
           <div class = "row">
-          <div class="col mb-5 text-black text-center" style="font-size:2rem;margin-top:0rem;">
-          <h2 class="text-black text-center mb-3" style="font-family:'Eina Bold',sans-serif;margin-top:2rem;font-weight:bold;">
+          <div class="col mb-5 text-dark text-center" style="font-size:2rem;margin-top:0rem;">
+          <h2 class="text-dark text-center mb-3" style="font-family:'Eina Bold',sans-serif;margin-top:2rem;font-weight:bold;">
             Our hubs around Halifax <hr class="w-75" style="margin: 0 auto;margin-top:1rem;"></hr></h2>
             <div id="map-container-google-11" class="z-depth-3-full map-container-5" style="height: 200px">
             <iframe src="https://maps.google.com/maps?q=Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"
