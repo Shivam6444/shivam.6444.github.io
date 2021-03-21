@@ -30,7 +30,7 @@
             $access_token = $_SESSION['third_party_access_token'];
             
             unset($_SESSION['otp_code']);
-            
+            echo "in-otp req";
             add_user($fname, $lname, $email, $phone_number, $password, $login_type, $access_token, $_SESSION['secret_token']);
             
             die();

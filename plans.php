@@ -7,6 +7,8 @@
 
     <div class="container">
       <div class="row d-flex justify-content-center">
+        
+
         <div class="card mb-4 shadow-lg hover-shadow" id="card-component" style="margin-top:6rem;width:70%;">
           <div class="card-body">
             <div class="row">

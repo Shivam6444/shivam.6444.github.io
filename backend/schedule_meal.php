@@ -39,11 +39,11 @@
         /* Checking if user have enough tokens */
         if($_SESSION['available_tokens'] < $qty){
             if($_SESSION['available_tokens'] == 0){
+                $_SESSION['scheduling_meal'] = true;
                 $_SESSION['ordering_qty'] = $qty;
                 $_SESSION['ordering_item_id'] = $item_id;
                 $_SESSION['ordering_hub_id'] = $hub_id;
-                print_r($_SESSION);
-                // header("Location: ../plans.php?");
+                header("Location: ../plans.php");
                 die();
             }
             //== This happens if someone tries to manipulate front-end to send a request where the number

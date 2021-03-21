@@ -151,10 +151,11 @@ function add_user($fname, $lname, $email, $phone_number, $password, $login_type,
     }
 
     // ---- SET THE NULL CONDITIONS
-
+    date_default_timezone_set("America/Halifax");
+    $current_date = date('Ymd');
     $sql = "INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `phone`, `password`, 
-    `login_type`) VALUES (NULL, '{$fname}', '{$lname}', '{$email}', '{$phone_number}', '{$password}', '{$login_type}')";
-    
+    `login_type`, `availableTokens`, `tokenExpiry`) VALUES (NULL, '{$fname}', '{$lname}', '{$email}', '{$phone_number}', '{$password}', '{$login_type}', '0', '{$current_date}')";
+    echo $sql;
     if($conn->query($sql)){
         login_third_party($phone_number, $access_token);
         die();

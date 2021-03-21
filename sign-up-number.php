@@ -197,7 +197,7 @@
               <li>
                 <a href="#!" class="text-dark">Order History</a>
               </li>
-              <li>
+              <li> 
                 <a href="#!" class="text-dark">Customer Service</a>
               </li>
               <li>
@@ -246,7 +246,8 @@
         <a cfass="text-dark" style="font-family: 'DM Sans',sans-serif; font-size: 1rem;" href="https://mdbootstrap.com/">© 2021 Copyright: Mealful Inc.</a>
       </div>
     </div>
-    </footer>
+    
+</footer>
     <!-- Footer -->
     
 
