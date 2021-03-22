@@ -27,8 +27,8 @@ $GLOBALS["PRICING"] =
 
 ];
 
-$GLOBALS["INDIVIDUAL_MEAL_DISCOUNT"] = 20;
-$GLOBALS["MEAL_PLAN_DISCOUNT"] = 23;
+$GLOBALS["INDIVIDUAL_MEAL_DISCOUNT"] = .80;
+$GLOBALS["MEAL_PLAN_DISCOUNT"] = .77;
 
 /************ NOTICE::: IF YOU UPDATE THIS THEN UPDATE THE CHARGE.JS AS WELL *********************/
 
@@ -40,59 +40,70 @@ If the price coming from front-end does not match the back-end then this functio
 
 */
 
-function validate_price_token_user($user_id, $qty, $weeks,$price){
-    $is_new = is_first_time_user($user_id);
-    if($is_new == NULL){
-        return NULL;
-    }
+// function  validate_price_token_user($user_id, $qty, $weeks,$price){
+//     $is_new = is_first_time_user($user_id);
+//     if($is_new == NULL){
+//         return NULL;
+//     }
 
-    //*********THE LOGIC BELOW CAN BE BETTER***********/
-    /* User is First time */
-    if($is_new == true){
-        $actual_price = get_price(false, true, $qty, $weeks);
-        if($actual_price == $price){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    else{
-        $ever_subscribed = $is_new["ever_subscribed"];
-        $eligible_for__ind_meal_discount = $is_new["individual_discount_elegibility"];
-        $actual_price = get_price($ever_subscribed, $eligible_for__ind_meal_discount, $qty, $weeks);
-        if($actual_price == $price){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-}
+//     //*********THE LOGIC BELOW CAN BE BETTER***********/
+//     /* User is First time */
+//     if($is_new == true){
+//         $actual_price = get_price(false, true, $qty, $weeks);
+//         if($actual_price == $price){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     }
+//     else{
+//         $ever_subscribed = $is_new["ever_subscribed"];
+//         $eligible_for__ind_meal_discount = $is_new["individual_discount_elegibility"];
+//         $actual_price = get_price($ever_subscribed, $eligible_for__ind_meal_discount, $qty, $weeks);
+//         if($actual_price == $price){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     }
+// }
 
 /*
 
     Gets the price based on the case of user
 
 */
-function get_price($ever_subscribed, $eligible_for__ind_meal_discount, $qty, $weeks){
-    $price = $GLOBALS["PRICING"][$weeks][$qty];
+function get_price($user_id, $qty, $weeks){
+    echo "HELLO HERE";
+    $price = $GLOBALS["PRICING"][$qty][$weeks];
+    
+    // return $price;
+    $result = is_first_time_user($user_id);
+    echo "AFTER::IS FST";
+    if($result == NULL){
+        
+        return NULL;
+    }
+    if($result == true){
+        $eligible_for__ind_meal_discount = true;
+        $ever_subscribed = false;
+    }
+    else{
+        $eligible_for__ind_meal_discount = $result['individual_discount_elegibility'];
+        $ever_subscribed = $result["ever_subscribed"];
+    }
 
+    
     if($qty == 1 && $eligible_for__ind_meal_discount == true){
-        //send the price 
-        return round(($price *  (1 - ($GLOBALS["INDIVIDUAL_MEAL_DISCOUNT"] / 100))), 2);
-    }
-    else if($qty == 1 && $eligible_for__ind_meal_discount == false){
-        // send the price of individual meal without discount
-        return $price;
-    }
-
-    else if($qty > 1 && $ever_subscribed == true){
-        // send usual meal prices
-        return $price;
+        return round(($price *  $GLOBALS["INDIVIDUAL_MEAL_DISCOUNT"] * $qty * $weeks), 2);
     }
     else if($qty > 1 && $ever_subscribed == false){
-        return round(($price *  (1 - ($GLOBALS["MEAL_PLAN_DISCOUNT"] / 100))), 2);
+        return round(($price *  $GLOBALS["MEAL_PLAN_DISCOUNT"] * $qty), 2);
+    }
+    else{
+        return $price * $qty * $weeks;
     }
 }
 
@@ -110,21 +121,25 @@ function get_price($ever_subscribed, $eligible_for__ind_meal_discount, $qty, $we
 
 function is_first_time_user($user_id){
     include "db.php";
-
-    if($user_id == false){
+    
+    if($user_id == NULL || $user_id == ""){
         return NULL;
     }
+    echo "<br>=========BEFORE::fst===========<br/>";
     
     $sql = "SELECT * from transaction where user_id = '{$user_id}'";
     $result = $conn->query($sql);
-
+    
     if(!$result){
         return NULL;
     }
+   echo $result->num_rows;
     //User is new
     if($result->num_rows == 0){
         return true;
+        
     }
+    // echo "<br>=========AFTER::fst===========<br/>";
     //Old user
     else{
         $ever_subscribed = false;

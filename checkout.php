@@ -1,5 +1,7 @@
 <?php
   include "includes/header.php";
+  include "backend/functions/payment_functions.php"
+
 ?>
 <style>
   @font-face {
@@ -43,17 +45,32 @@
     background-color: #fefde5 !important;
   }
 </style>
-  <?php
-    // print_r($_POST);
 
+  <?php
+
+    $amount = get_price($_SESSION['user_id'], $_POST['numOfMeals'], $_POST['numOfWeeks']);
+
+    if($amount == NULL){
+      #500 PAGE
+      die("INTERNAL SERVER ERROR");
+    }
+    else{
+      /**SANITIZE */
+      $_SESSION['amount'] = $amount;
+      $_SESSION['numOfMeals'] = $_POST['numOfMeals'];
+      $_SESSION['numOfWeeks'] = $_POST['numOfWeeks'];
+    }
   ?>
 
   <div class="container">
     <div class="row d-flex justify-content-center">
     <div class="card mb-5 shadow-lg">
     <div class="card-body">
+   
     <h2 class="card-title text-center" style="font-family:'Eina Bold',sans-serif;">Checkout</h2>
     <form action="./backend/charge.php" method="post" id="payment-form">
+    <input type="hidden" name="numOfMeals" value="<?php echo $_POST['numOfMeals'] ?>">
+    <input type="hidden" name="numOfWeeks" value="<?php echo $_POST['numOfWeeks'] ?>">
       <div class="form-row">
        <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
        <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">

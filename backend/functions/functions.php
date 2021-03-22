@@ -71,12 +71,16 @@ function new_user_by_phone($phone){
         return true;
     }
 }
+
+
+
 /*
     Adds an order to the table, decreases the token
 */
 
 function add_oder($user_id, $item_id, $hub_id, $qty){
     include "db.php";
+    session_start();
     ////------------SANITIZATION-------------///
 
     $user_id =  sanitize($user_id);
@@ -91,7 +95,14 @@ function add_oder($user_id, $item_id, $hub_id, $qty){
     if(!(is_numeric($hub_id)  && is_numeric($item_id) && is_numeric($qty))){
         return NULL;
     }
+
+    if($_SESSION['available_tokens'] < $qty){
+        // --- Trying to schedule more qty that tokens
+        $qty = $_SESSION['available_tokens'];
+    }
+
     ///------------------------------////
+
 
     
     $conn->autocommit(FALSE);
@@ -381,11 +392,7 @@ function login($username, $password, $secret_token){
 }
 
 
-
 //------------------LOGIN HANDLERS FOR NATIVE AND THIRD PARTIES -- END---------------------//
-
-
-
 
 /*
     Twilio API call
@@ -413,9 +420,6 @@ function send_sms($phone_number, $message){
 
 
 }
-
-
-
 
 /*
 
@@ -504,6 +508,42 @@ function get_items($date, $slot){
         }
     }
     return false;
+}
+
+
+//Function get scheduled items for the user
+
+function get_scheduled_items_by_user($user_id){
+    include "db.php";
+    date_default_timezone_set("America/Halifax");
+    $current_date = date('Ymd');
+    $current_time = date('H:i:s');
+
+    $item_sql = "SELECT * from Menu 
+    where 
+    date >= '{$current_date}' and 
+    is_Active = 1 and 
+    slot_time >= '{$current_time}' and 
+    item_id IN (SELECT item_id from order_table where user_id = '{$user_id}' and isScheduled = 1)
+    order by date and slot_time
+    ";
+
+ 
+    $res = $conn->query($item_sql);
+
+    if(!$res){
+        die("INTERNAL SERVER ERROR");
+        exit();
+    }
+
+    $all_items = array();
+    while($row = $res->fetch_assoc()){
+        array_push($all_items, $row);
+    }
+
+    return $all_items;
+
+    // $sql = "SELECT * from order WHERE user_id = '{$user_id}'"
 }
 
 function get_chefs(){

@@ -10,6 +10,7 @@
 
     $loggedIn = false;// By default person is not logged in
     $FILES_ACCESSIBLE_WITHOUT_LOGIN = array("loginform.php", "sign_up.php", "sign-up-number.php", "index.php");
+    ob_start();
 
 
 //-------------------------------------------------Login verification----------------------//

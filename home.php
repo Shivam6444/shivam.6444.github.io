@@ -80,38 +80,9 @@
 
 ?>
 
-<!-- <div class="container text-center">
-<div class="btn-toolbar mb-2" role="toolbar" aria-label="Toolbar with button groups" style="font-family:'DM Sans',sans-serif;">
-  <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
-    <button type="button" id="calendar-btn" class="btn btn-white text-black " style="font-size:1rem;text-transform:initial;font-weight:bold;">Mon<br><strong><h4 style="margin-top:.5rem;">11</h4></strong></button>
-  </div>
-  <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
-    <button type="button" id="calendar-btn" class="btn btn-white text-black" style="font-size:1rem;text-transform:initial;font-weight:bold;">Tue<br><strong><h4 style="margin-top:.5rem;">12</h4></strong></button>
-  </div>
-  <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
-
-    <button type="button" id="calendar-btn" class="btn btn-white text-black" style="font-size:1rem;text-transform:initial;font-weight:bold;">Wed<br><strong><h4 style="margin-top:.5rem;">13</h4></strong></button>
-  </div>
-  <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
-
-    <button type="button" id="calendar-btn" class="btn btn-white text-black active" style="font-size:1rem;text-transform:initial;font-weight:bold;">Thu<br><strong><h4 style="margin-top:.5rem;">14</h4></strong></button>
-  </div>
-  <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
-    <button type="button" id="calendar-btn" class="btn btn-white text-black" style="font-size:1rem;text-transform:initial;font-weight:bold;">Fri<br><strong><h4 style="margin-top:.5rem;">15</h4></strong></button>
-  </div>
-  <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.669%;">
-    <button type="button" id="calendar-btn" class="btn btn-white text-black" style="font-size:1rem;text-transform:initial;font-weight:bold;">Sat<br><strong><h4 style="margin-top:.5rem;">16</h4></strong></button>
-  </div>
-  <div class="btn-group me-2 shadow-0 text-center" role="group" aria-label="First group" style="width:13.67%;">
-    <button type="button" id="calendar-btn" class="btn btn-white text-black" style="font-size:1rem;text-transform:initial;font-weight:bold;">Sun<br><strong><h4 style="margin-top:.5rem;">17</h4></strong></button>
-  </div>
-</div>
-</div> -->
 <div class="container">
-<hr class ="mb-5" id="menu-divider"></hr>
+  <hr class ="mb-5" id="menu-divider"></hr>
 </div>
-
-
 
 <div class="container">
 
@@ -157,13 +128,9 @@
       <strong>&nbspNote:</strong>  Lunch is to be picked up from 12:00pm to 4:00pm and dinner is to be picked up between 5:00pm to 9:00pm from your designated hub.
   </p>
   </div>
-
-
     <?php
       include "./views/home_card_component.php"
     ?>
-
-
   </div>
 </div>
 
