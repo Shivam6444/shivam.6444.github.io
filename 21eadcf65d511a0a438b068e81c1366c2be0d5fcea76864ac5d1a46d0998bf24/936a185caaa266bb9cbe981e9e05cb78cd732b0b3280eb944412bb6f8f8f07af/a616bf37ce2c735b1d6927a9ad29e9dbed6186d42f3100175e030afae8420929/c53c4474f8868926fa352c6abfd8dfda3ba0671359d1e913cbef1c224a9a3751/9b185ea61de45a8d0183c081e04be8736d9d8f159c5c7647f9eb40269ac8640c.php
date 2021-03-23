@@ -28,7 +28,6 @@
     }
 
 
-
     if($_SESSION['admin_access_allocated'] == true){
 
 
