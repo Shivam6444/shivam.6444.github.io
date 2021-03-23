@@ -123,7 +123,7 @@
                                                   data-tokens="<?php echo $hub['locationTags'] ?>"
                                                   >
                                                   <?php 
-                                                    echo $hub['name'].", ". $hub['location'];
+                                                    echo $hub['hub_name'].", ". $hub['location'];
                                                   ?>
                                                   
                                               </option>

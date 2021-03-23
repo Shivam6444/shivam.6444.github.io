@@ -556,7 +556,6 @@ function get_chefs(){
         $conn->close();
         return NULL;
     }
-
     if($result->num_rows == 0){
         $conn->close();
         return false;
