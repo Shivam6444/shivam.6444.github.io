@@ -30,7 +30,7 @@
 
     if($_SESSION['admin_access_allocated'] == true){
 
-
+        $error = false;
         if(isset($_POST['fetch_order_submit'])){
             //Sanitize
             
@@ -82,34 +82,41 @@
             }
 
         }
+
         if(isset($_POST['insert_item_submit'])){
             echo "HERE";
             $item_heading =     sanitize($_POST['item_heading']);
             $item_desc =        sanitize($_POST['item_desc']);
+            $chefid =           sanitize($_POST['']);
+            $img_name = uniqid().".png";
+            $target_file     = "../../../../img/". $img_name;
 
-            $target_file     = "../../../../img/".uniqid().".png";
+            $post_image_filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-            $post_image_filetype = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-            if($$_FILES['item_image']['name'] == ""){
-                echo "empty";
+            if($_FILES['item_image']['name'] == ""){
+                $error = true;
             }
             
             $item_image = $_FILES['item_image']['name'];
             $item_image_temp = $_FILES['item_image']['tmp_name'];
             $item_image_size = $_FILES['item_image']['size'];
 
-            echo $target_file;
-            move_uploaded_file($user_image_temp, $target_file);
-            die();
-            // if($user_image_filesize < 2097152){
-            //     move_uploaded_file($user_image_temp, $target_file);
-            // }
+            // echo $target_file;
             // move_uploaded_file($user_image_temp, $target_file);
+            echo "-----".$post_image_filetype."------";
+            echo "-----".$item_image."-----";
+            echo "-----".$item_image_size."----";
+
+            if(!move_uploaded_file($item_image_temp, $target_file)){
+                  $error = true;
+            }
+            
 
 
+            $status = insert_item($item_heading, $item_desc, $img_name, $chef_id, $date, $slot);
 
-            // $status = insert_item($item_heading, $item_desc, $file, $chef_id, $date, $slot);
+
         }
         
 
