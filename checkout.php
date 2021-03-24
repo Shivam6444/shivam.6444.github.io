@@ -68,6 +68,11 @@
     <div class="card-body">
    
     <h2 class="card-title text-center" style="font-family:'Eina Bold',sans-serif;">Checkout</h2>
+    <p><strong>Number of Tokens: </strong><?php echo $_POST['numOfMeals'] * $_POST['numOfWeeks']; ?></p>
+    <p><strong>Number of Weeks: </strong><?php echo $_POST['numOfWeeks']; ?></p>
+    <p><strong>HST: </strong><?php echo round($amount * 0.15,2); ?></p>
+    <p><strong>Total Amount: </strong><?php echo round($amount * 1.15, 2);  ?></p>
+    
     <form action="./backend/charge.php" method="post" id="payment-form">
     <input type="hidden" name="numOfMeals" value="<?php echo $_POST['numOfMeals'] ?>">
     <input type="hidden" name="numOfWeeks" value="<?php echo $_POST['numOfWeeks'] ?>">

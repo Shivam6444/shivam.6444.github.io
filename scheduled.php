@@ -1,16 +1,13 @@
 <?php
     include "includes/header.php";
     include_once "backend/functions/functions.php";
-    echo "<br><br><br><br><br><br><br><br><br><br>";
    
     $all_items = get_scheduled_items_by_user($_SESSION['user_id']);
-
-    print_r($all_items[0]);
 
     $pick_up_items = array();
     $remaining_items = array();
     $current_date = date("Y-m-d");
-    $current_time = date("H:i:s", strtotime('+ 12 hours'));
+    $current_time = date("H:i:s", strtotime('+4 hours'));
 
     foreach($all_items as $item){
 
@@ -103,7 +100,7 @@
                     <div class="col-md-8">
                         <div class="card-body text-dark pt-4" style="font-family:'Eina Regular',sans-serif;">
                         
-                            <h5 class="card-title mb-1" style="font-family:'Eina Regular',sans-serif;">Your lunch order has been <strong style="font-family:'Eina Bold',sans-serif;color:#ffb22f;">scheduled</strong> for <strong style="font-family:'Eina Bold',sans-serif;color:#ffb22f;"><?php echo $item['date']; ?></strong></h5>
+                            <h5 class="card-title mb-1" style="font-family:'Eina Regular',sans-serif;">Your <strong> <?php if($item['slot'] == 'L'){ echo "lunch";} else{ echo "dinner";} ?></strong> has been <strong style="font-family:'Eina Bold',sans-serif;color:#ffb22f;">scheduled</strong> for <strong style="font-family:'Eina Bold',sans-serif;color:#ffb22f;"><?php echo $item['date']; ?></strong></h5>
                             
                             <hr style="border: 0;height: .8px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));">
                             <h6 class="card-title text-dark" style="font-family:'Eina Bold',sans-serif;"><?php echo $item['qty']; ?>x <?php echo $item['item_heading']; ?></h6>
@@ -131,7 +128,7 @@
                                 View pickup point on map
                                 </a>
                                 
-                                <a href="./backend/user_order_calls.php" type="submit" name="submitCancel" class="btn mx-1 text-light hover-shadow mt-2 text-center" style="font-family:'Eina Regular',sans-serif;font-size:1rem;text-transform:none;background-color:#dd0000;">
+                                <a href="./backend/user_order_calls.php?order_id=<?php echo $item['order_id']; ?>" type="submit" name="submitCancel" class="btn mx-1 text-light hover-shadow mt-2 text-center" style="font-family:'Eina Regular',sans-serif;font-size:1rem;text-transform:none;background-color:#dd0000;">
                                     <span><?xml version="1.0" encoding="UTF-8"?>
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23px" height="23px" viewBox="0 0 77 77" version="1.1" style="margin-bottom:.1rem;margin-left:-.2rem;margin-right:.2rem;">
                                     <g id="surface1">

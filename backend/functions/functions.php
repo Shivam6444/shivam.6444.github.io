@@ -605,7 +605,22 @@ function get_hubs($lunch, $dinner)
 //---------------------------------- DB customer calls      -------------------//
 //------------------------------===========================-------------------//
 function cancel_order($user_id, $order_id){
+    include "db.php";
+    date_default_timezone_set("America/Halifax");
+    $current_time = date("Y-m-d H:i:s");
     
+    $sql = "UPDATE `order_table` SET `isScheduled` = '0', `cancelTime` = '{$current_time}' WHERE 
+    `order_table`.`order_id` = '{$order_id}'
+";
+
+    if($conn->query($sql)){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+
 }
 
 
