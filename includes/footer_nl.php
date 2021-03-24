@@ -48,9 +48,6 @@
               <li>
                 <a href="#!" class="text-dark">Partners</a>
               </li>
-              <li>
-                <a href="#!" class="text-dark">Careers</a>
-              </li>
             </ul>
           </div>
           <!--Grid column-->

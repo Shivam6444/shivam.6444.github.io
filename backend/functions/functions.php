@@ -519,16 +519,16 @@ function get_scheduled_items_by_user($user_id){
     $current_date = date('Ymd');
     $current_time = date('H:i:s');
 
-    $item_sql = "SELECT * from Menu 
-    where 
-    date >= '{$current_date}' and 
-    is_Active = 1 and 
-    slot_time >= '{$current_time}' and 
-    item_id IN (SELECT item_id from order_table where user_id = '{$user_id}' and isScheduled = 1)
-    order by date and slot_time
+
+    $item_sql = "SELECT * from Menu, hub, order_table WHERE
+        Menu.date >= '{$current_date}' and
+        isScheduled = '1' and
+        order_table.user_id = '{$user_id}' and
+        slot_time >= '{$current_time}' and
+        Menu.item_id = order_table.item_id and
+        order_table.hub_id = hub.hub_id
     ";
 
- 
     $res = $conn->query($item_sql);
 
     if(!$res){
@@ -595,12 +595,19 @@ function get_hubs($lunch, $dinner)
         $conn->close();
         return $data;
     }
-    // $conn->close(); 
 }
 
 //------------------------------===========================-------------------//
 //---------------------------------- View fetch calls Ended -------------------//
 //------------------------------===========================-------------------//
+
+//------------------------------===========================-------------------//
+//---------------------------------- DB customer calls      -------------------//
+//------------------------------===========================-------------------//
+function cancel_order($user_id, $order_id){
+    
+}
+
 
 
 //--------- HELPER FUNCTIONS ---------//

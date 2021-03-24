@@ -29,7 +29,7 @@
                 <div class="col mb-3">
                   <div class="card h-100 shadow-lg" style="border-radius: 1rem; cursor:pointer;">
                     <img
-                      src="./img/butter-chicken.png"
+                      src="<?php echo $item['item_img'];  ?>"
                       class="card-img-top"
                       alt="..."
                       style="border-radius: 1rem 1rem 0rem 0rem;"
@@ -64,7 +64,7 @@
                             <div class="modal-content text-black">
 
                               <div class="modal-header">
-                                <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">Lunch Menu</h4>
+                                <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;"><?php echo ucfirst($active_slot); ?></h4>
                               
 
                                 <button
@@ -80,7 +80,7 @@
                               <div class="modal-body">
                                 <div class="col">
                                   <img
-                                    src="./img/butter-chicken.png"
+                                    src="<?php echo $item['item_img']; ?>"
                                     class="card-img-top mb-0"
                                     alt="..."
                                     style="border-radius: .5rem;"
@@ -88,18 +88,23 @@
 
                                 <div class="justify-content-left">
                                 <h2 class="modal-title text-start text-black" style="font-weight:bold;">
-                                  Butter Chicken Naan
+                                  <?php echo $item['item_heading'] ?>
                                 </h2>
 
                                 <p class="modal-title text-start text-black">
-                                  Butter Chicken cooked with traditional indian spices served with tandoori naan.
+                                  <?php echo $item['item_desc']; ?>
                                 </p>
 
                                 
                                 <hr class="mb-3" style="background-color:black;"></hr>
 
                                 <p class="text-black text-center mb-2" style="font-family:'Eina Regular',sans-serif;margin-top:1rem;font-weight:bolder;font-size:1.1rem;">
-                                  Pick up your meal between 1pm to 4pm from:</p>
+                                  
+                                  <?php 
+
+                                        if($active_slot == 'lunch'){ echo "Pick up your meal between 1pm to 4pm from:"; }
+                                        else if($active_slot == 'dinner') { echo "Pick up your meal between 5pm to 8pm from:"; }
+                                  ?>
                                 
                                   <div class="row" style="height:auto;">
                                     <div class="col-md-12">
@@ -116,11 +121,10 @@
                                               foreach($HUBS as $hub){
                                                 echo $hub;
                                           ?>
-                                              
                                               <option 
                                                   value="<?php echo $hub['hub_id']; ?>"
                                                   style="font-weight:bold;font-size:1rem;text-transform:none;" 
-                                                  data-tokens="<?php echo $hub['locationTags'] ?>"
+                                                  data-tokens="<?php echo $hub['locationTags']; ?>"
                                                   >
                                                   <?php 
                                                     echo $hub['hub_name'].", ". $hub['location'];

@@ -100,39 +100,72 @@
 
   <h2 class = "text-left text-dark mb-0" style="font-family:'Eina Regular',sans-serif; letter-spacing: 0rem;font-weight:bolder;">Lunch menu</h2>
   <div class="alert dialog alert-warning" role="alert" style="border-radius: 1.1rem;margin-bottom:2rem;">
-  <p class="card-text text-dark">
-    <span><?xml version="1.0" encoding="iso-8859-1"?>
-      <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;padding-bottom: .1rem;" height="22" width="22" xml:space="preserve">
-      <g>
+    <p class="card-text text-dark">
+      <span><?xml version="1.0" encoding="iso-8859-1"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;padding-bottom: .1rem;" height="22" width="22" xml:space="preserve">
         <g>
-          <path d="M256,0C114.497,0,0,114.507,0,256c0,141.503,114.507,256,256,256c141.503,0,256-114.507,256-256
-            C512,114.497,397.492,0,256,0z M256,472c-119.393,0-216-96.615-216-216c0-119.393,96.615-216,216-216
-            c119.393,0,216,96.615,216,216C472,375.393,375.384,472,256,472z"/>
+          <g>
+            <path d="M256,0C114.497,0,0,114.507,0,256c0,141.503,114.507,256,256,256c141.503,0,256-114.507,256-256
+              C512,114.497,397.492,0,256,0z M256,472c-119.393,0-216-96.615-216-216c0-119.393,96.615-216,216-216
+              c119.393,0,216,96.615,216,216C472,375.393,375.384,472,256,472z"/>
+          </g>
         </g>
-      </g>
-      <g>
         <g>
-          <path d="M256,214.33c-11.046,0-20,8.954-20,20v128.793c0,11.046,8.954,20,20,20s20-8.955,20-20.001V234.33
-            C276,223.284,267.046,214.33,256,214.33z"/>
+          <g>
+            <path d="M256,214.33c-11.046,0-20,8.954-20,20v128.793c0,11.046,8.954,20,20,20s20-8.955,20-20.001V234.33
+              C276,223.284,267.046,214.33,256,214.33z"/>
+          </g>
         </g>
-      </g>
-      <g>
         <g>
-          <circle cx="256" cy="162.84" r="27"/>
-        </g>
+          <g>
+            <circle cx="256" cy="162.84" r="27"/>
+          </g>
 
-      </svg>
-      </span>     
-      <strong>&nbspNote:</strong>  Lunch is to be picked up from 12:00pm to 4:00pm and dinner is to be picked up between 5:00pm to 9:00pm from your designated hub.
-  </p>
+        </svg>
+        </span>     
+        <strong>&nbspNote:</strong>  Lunch is to be picked up from 12:00pm to 4:00pm and dinner is to be picked up between 5:00pm to 9:00pm from your designated hub.
+    </p>
   </div>
-    <?php
-      include "./views/home_card_component.php"
-    ?>
+
+  <?php  if(isset($_GET['mealscheduled']) || isset($_GET['orderedSuccessfully'])){ ?>
+    <div class="alert dialog alert-info" role="alert" style="border-radius: 1.1rem;margin-bottom:2rem;">
+      <p class="card-text text-dark">
+        <span><?xml version="1.0" encoding="iso-8859-1"?>
+          <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;padding-bottom: .1rem;" height="22" width="22" xml:space="preserve">
+          <g>
+            <g>
+              <path d="M256,0C114.497,0,0,114.507,0,256c0,141.503,114.507,256,256,256c141.503,0,256-114.507,256-256
+                C512,114.497,397.492,0,256,0z M256,472c-119.393,0-216-96.615-216-216c0-119.393,96.615-216,216-216
+                c119.393,0,216,96.615,216,216C472,375.393,375.384,472,256,472z"/>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path d="M256,214.33c-11.046,0-20,8.954-20,20v128.793c0,11.046,8.954,20,20,20s20-8.955,20-20.001V234.33
+                C276,223.284,267.046,214.33,256,214.33z"/>
+            </g>
+          </g>
+          <g>
+            <g>
+              <circle cx="256" cy="162.84" r="27"/>
+            </g>
+
+          </svg>
+          </span>     
+          <strong>&nbspNote:</strong> Your meal is scheduled. <a href="./scheduled.php">View scheduled meals</a>
+      </p>
+    </div>
+  <?php } ?>
+      <?php
+        include "./views/home_card_component.php";
+      ?>
+    </div>
   </div>
-</div>
+
 
 
 <?php

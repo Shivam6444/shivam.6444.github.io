@@ -72,11 +72,10 @@
     <input type="hidden" name="numOfMeals" value="<?php echo $_POST['numOfMeals'] ?>">
     <input type="hidden" name="numOfWeeks" value="<?php echo $_POST['numOfWeeks'] ?>">
       <div class="form-row">
-       <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
-       <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">
+  
         <div id="card-element" class="form-control">
         </div>
-        <div id="card-errors" role="alert"></div>
+      <div id="card-errors" role="alert"></div>
       </div>
 
       <button>Submit Payment</button>

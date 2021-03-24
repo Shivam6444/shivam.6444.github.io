@@ -25,9 +25,7 @@
                     <li>
                       <a href="#!" class="text-white">Partners</a>
                     </li>
-                    <li>
-                      <a href="#!" class="text-white">Careers</a>
-                    </li>
+     
                   </ul>
                 </div>
                 <!--Grid column-->

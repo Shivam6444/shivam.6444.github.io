@@ -1,23 +1,14 @@
 <?php
   include "includes/header.php";
   include "backend/payment_information.php";
-  echo "<br>";
-  print_r($_SESSION);
   if(!isset($_SESSION['available_tokens'])){
     die();
   }
-  else if($_SESSION['available_tokens'] >= 1){
-      echo "HERE";
-      // ob_end_clean();
-      // header("Location: ./home.php");
-      // exit();
-  }
+
 
   $is_first_time_user = is_first_time_user($_SESSION['user_id']);
 
-  if($is_first_time_user == true){
-    echo "<br>HELLO HERE";
-  }
+
 
 ?>
 
@@ -150,7 +141,7 @@
             </div>
           </div>
     
-          <div class = "row">
+          <!-- <div class = "row">
           <div class="col mb-5 text-dark text-center" style="font-size:2rem;margin-top:0rem;">
           <h2 class="text-dark text-center mb-3" style="font-family:'Eina Bold',sans-serif;margin-top:2rem;font-weight:bold;">
             Our hubs around Halifax <hr class="w-75" style="margin: 0 auto;margin-top:1rem;"></hr></h2>
@@ -163,11 +154,11 @@
             <input type="hidden" name="loginToken" value="<?php echo $_SESSION['secret_token']; ?>">
               
             </form>
-          </div>
+          </div> -->
           </div>
       
-          </div>
         </div>
+      </div>
 
     
     <script src="js/mealplan-calculator.js" type="text/javascript"></script>

@@ -14,11 +14,12 @@
 
     $email = $_SESSION['email'];
     $qty = $_SESSION['numOfMeals'];
-    $numTokens = $qty * $numWeeks;
     $numWeeks = $_SESSION['numOfWeeks'];
     $user_id = $_SESSION['user_id'];
     $token = $POST['stripeToken'];
-    $amount = $_SESSION['amount']; 
+    $amount = $_SESSION['amount'];
+    $numTokens = $qty * $numWeeks; 
+
     $desc = "Number of meals =".$qty." and weeks =".$numWeeks."tokens=".$numTokens;
    
 
@@ -46,6 +47,7 @@
 
     echo $status;
 
+   
     if($charge->status != 'succeeded'){
         include "./functions/db.php";
         // Backend Email 
@@ -67,14 +69,19 @@
         $conn->autocommit(FALSE);
         $sql_trans_add = "INSERT INTO `transaction` 
         (`id`, `user_id`, `customer_id`, `token`, `amount`, `status`) VALUES 
-        ($cus_id, '{$user_id}', '{$customer}', '{$numTokens}', '{$amount}', '{$status}')";
+        ('{$cus_id}', '{$user_id}', '{$customer}', '{$numTokens}', '{$amount}', '{$status}')";
         
         $sql_user_update = "UPDATE `user` SET 
         `availableTokens` = availableTokens + '{$numTokens}' 
         WHERE `user`.`user_id` = {$user_id}";
+        
+        echo "<br>".$sql_user_update."<br>";
+        echo "<br>".$sql_trans_add."<br>";
 
+        
         $conn->query($sql_trans_add); 
         $conn->query($sql_user_update);
+        
         // Commit transaction
         if (!$conn->commit()) {
             echo "Commit transaction failed";
@@ -85,7 +92,6 @@
         // Rollback transaction
         $conn->rollback();
         $conn->close();
-
         $_SESSION['available_tokens'] = $_SESSION['available_tokens'] + $numTokens;
 
         $res = add_oder($user_id, $_SESSION['ordering_item_id'], $_SESSION['ordering_hub_id'], $_SESSION['ordering_qty']);

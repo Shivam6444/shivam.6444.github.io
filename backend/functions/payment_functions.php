@@ -76,12 +76,10 @@ If the price coming from front-end does not match the back-end then this functio
 
 */
 function get_price($user_id, $qty, $weeks){
-    echo "HELLO HERE";
     $price = $GLOBALS["PRICING"][$qty][$weeks];
     
     // return $price;
     $result = is_first_time_user($user_id);
-    echo "AFTER::IS FST";
     if($result == NULL){
         
         return NULL;
@@ -125,8 +123,7 @@ function is_first_time_user($user_id){
     if($user_id == NULL || $user_id == ""){
         return NULL;
     }
-    echo "<br>=========BEFORE::fst===========<br/>";
-    
+
     $sql = "SELECT * from transaction where user_id = '{$user_id}'";
     $result = $conn->query($sql);
     
@@ -139,8 +136,7 @@ function is_first_time_user($user_id){
         return true;
         
     }
-    // echo "<br>=========AFTER::fst===========<br/>";
-    //Old user
+
     else{
         $ever_subscribed = false;
         $eligible_for__ind_meal_discount = true;
