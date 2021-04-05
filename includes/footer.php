@@ -58,13 +58,13 @@
 
                   <ul class="list-unstyled mb-0">
                     <li>
-                      <a href="#!" class="text-white">Cook for us</a>
+                      <a href="https://forms.gle/JUQp1MdYisBXsCUV9" class="text-light" target="_blank">Cook for us</a>
                     </li>
                     <li>
-                      <a href="#!" class="text-white">Become a hub partner</a>
+                      <a href="https://forms.gle/JUQp1MdYisBXsCUV9" class="text-light" target="_blank">Become a hub partner</a>
                     </li>
                     <li>
-                      <a href="#!" class="text-white">General inquries</a>
+                      <a href="https://forms.gle/JUQp1MdYisBXsCUV9" class="text-light" target="_blank">General inquries</a>
                     </li>
                   </ul>
                 </div>
@@ -130,6 +130,7 @@
     <!-- MDB -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+    
 
     <!-- Custom scripts -->
     <script type="text/javascript"></script>

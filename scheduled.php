@@ -92,8 +92,8 @@
                         <img
                             src="<?php echo $item['item_img']; ?>"
                             alt="..."
-                            class="card-img-top m-2"
-                            style="border-radius: .5rem .5rem .5rem .5rem;margin-left:-.2rem;"
+                            class="card-img-top mt-1"
+                            style="border-radius: .5rem .5rem .5rem .5rem;"
                         />
                     </div>
 

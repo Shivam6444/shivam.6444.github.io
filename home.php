@@ -46,9 +46,14 @@
 
 ?>
 
+<body>
+
+
+
+
 
 <div class="container text-center">
-  <div class="btn-toolbar mb-2" role="toolbar" aria-label="Toolbar with button groups" style="font-family:'Eina Regular',sans-serif;">
+  <div class="btn-toolbar mb-1" role="toolbar" aria-label="Toolbar with button groups" style="font-family:'Eina Regular',sans-serif;">
 <?php 
   foreach($calendar_data as $day => $date_num){
     //--- Modify styles here for active and normal anchors ---//
@@ -81,12 +86,12 @@
 ?>
 
 <div class="container">
-  <hr class ="mb-5" id="menu-divider"></hr>
+  <hr class ="mb-4" id="menu-divider"></hr>
 </div>
 
 <div class="container">
 
-<div class="btn-toolbar mb-0 float-end" role="group" aria-label="Basic radio toggle button group" style="font-family:'Eina Regular',sans-serif;border-radius:.5rem;">
+<div class="btn-toolbar mb-0 mt-3 float-end" role="group" aria-label="Basic radio toggle button group" style="font-family:'Eina Regular',sans-serif;border-radius:.5rem;">
 
 <div class="btn-group shadow-0 text-center" role="group" aria-label="First group" style="width:auto;">
     <a href="<?php echo './home.php?day='.$active_day.'&slot=lunch'; ?>" id="calendar-btn" class="btn btn-white text-black <?php if($active_slot == 'lunch'){ echo 'active'; }?>"  style="font-family:'Eina Regular',sans-serif;font-size:1rem;text-transform:initial;">Lunch</a>
@@ -98,7 +103,7 @@
 
 
 
-  <h2 class = "text-left text-dark mb-0" style="font-family:'Eina Regular',sans-serif; letter-spacing: 0rem;font-weight:bolder;">Lunch menu</h2>
+  <h2 class = "text-left text-dark mb-0" style="font-family:'Eina Regular',sans-serif; letter-spacing: 0rem;font-weight:bolder;">Lunch Menu</h2>
   <div class="alert dialog alert-warning" role="alert" style="border-radius: 1.1rem;margin-bottom:2rem;">
     <p class="card-text text-dark">
       <span><?xml version="1.0" encoding="iso-8859-1"?>
@@ -167,7 +172,7 @@
   </div>
 
 
-
+  </body>
 <?php
   include "includes/footer.php";
 ?>
